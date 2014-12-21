@@ -11,6 +11,7 @@ script: 'bin/rake db:create db:migrate RAILS_ENV=test'
 addons:
   code_climate:
     repo_token: 61783aaf134fdc8aa00d6633806de2e4d9022fe52dc3c3ca26757ad16470d075
+    script: 'bundle exec rake'
 
 branches:
   only:
