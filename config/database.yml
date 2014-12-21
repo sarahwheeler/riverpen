@@ -14,22 +14,29 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  default: &default
+    adapter: postgresql
+    encoding: unicode
+    # For details on connection pooling, see rails configuration guide
+    # http://guides.rubyonrails.org/configuring.html#database-pooling
+    pool: 5
 
-development:
-  <<: *default
-  database: Riverpen_development
+  development:
+     database: Riverpen_development
+     <<: *default
 
-test: &test
-  adapter: postgresql
-  encoding: unicode
-  database: Riverpen_test
-  pool: 5
+  test: &test
+     database: Riverpen_test
+     <<: *default
+
+  production:
+     database: Riverpen_production
+     <<: *default
+
+  cucumber:
+     database: cucumber
+     <<: *default
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
