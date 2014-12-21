@@ -22,11 +22,13 @@ source 'https://rubygems.org'
 # // TESTING //
 
 group :test, :development do
-	gem 'cucumber', '~> 1.3.17'
+	gem 'cucumber-rails', :require => false
+	gem 'rspec-expectations'
+	gem 'database_cleaner'
 	gem 'factory_girl_rails'
     gem 'capybara'
     gem 'simplecov'
-    gem "codeclimate-test-reporter", group: :test, require: nil
+    gem "codeclimate-test-reporter", require: nil
 	gem 'spring'		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
