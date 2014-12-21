@@ -26,7 +26,7 @@ $lime: #BCC747;
 	width: 100%;
 	margin-bottom: 20px;
 	padding-top: 8px;
-	background-color: $darkteal;
+	background-color: $wine;
 }
 
 #nav-logo {
@@ -59,7 +59,27 @@ li.nav-link {
 		text-decoration: none;
 	}
 	a:hover {
-		color: $lime;
+		color: $teal;
 		background-color: inherit;
+	}
+}
+
+li.btn-signup {
+	display: inline;
+	padding: 8px 8px;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1em;
+	background-color: $teal;
+	border: 1px solid $darkblue;
+	border-radius: 10px;
+	width: 75px;
+	height: 30px;
+	a {
+		text-decoration: none;
+		color: white;
+	}
+	a:hover {
+		background-color: inherit;
+		color: $darkblue;
 	}
 }
