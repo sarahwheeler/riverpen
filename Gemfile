@@ -25,6 +25,7 @@ group :test, :development do
 	gem 'cucumber', '~> 1.3.17'
 	gem 'factory_girl_rails'
     gem 'capybara'
+    gem 'simplecov'
 	gem 'spring'		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
