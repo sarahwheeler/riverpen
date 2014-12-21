@@ -1,0 +1,65 @@
+//  ** TYPOGRAPHY  **  //
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+
+//  ** COLOR CODES **  //
+
+$teal: #52B4AF; 
+$darkteal: #063E53;
+$blue: #0F9FB4;
+$darkblue: #293E6A;
+$dustypurple: #9C6A8D;
+$hotpurple: #8B1C55;
+$darkpurple: #3F2860;
+$red: #AB3334;
+$wine: #57102C;
+$lime: #BCC747;
+
+
+#navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-top: 8px;
+	background-color: $darkteal;
+}
+
+#nav-logo {
+	margin-left: 25px;
+	margin-right: 100px;
+	color: white;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1.8em; 
+}
+
+#nav-menu {
+	list-style: none;
+	float: right;
+	width: 60%;
+	padding-top: 3px;
+	margin-right: -18%;
+	vertical-align: middle;
+	vertical-align: -webkit-baseline-middle;
+}
+
+li.nav-link {
+	display: inline;
+	margin-right: 15px;
+	color: white;
+	font-family: 'News Cycle', sans-serif !important;
+	font-size: 0.95em;
+	font-weight: 400;	
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		color: $lime;
+		background-color: inherit;
+	}
+}
