@@ -6,6 +6,7 @@ rvm:
 
 before_script: 'bundle install'
 script: 'bundle exec cucumber'
+script: 'bin/rake db:create db:migrate RAILS_ENV=test'
 
 addons:
   code_climate:
