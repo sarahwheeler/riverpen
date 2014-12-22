@@ -31,7 +31,6 @@ group :test, :development do
 	gem "poltergeist"
 	gem "selenium-webdriver"
     gem 'simplecov'
-    gem "codeclimate-test-reporter", require: nil
 	gem 'spring'		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 
