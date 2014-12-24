@@ -1,0 +1,24 @@
+ <%= form_for('devise/users/signup', method: 'post') do |f| %>
+
+          <%# devise_error_messages! %>
+
+          <%= f.label :email, "Email Address" %><br />
+          <%= f.email_field :email, :name => "email_address", autofocus: true %>
+          <br />
+          <br />
+          <%= f.label :password, "Password" %><br />
+          <% if @validatable %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %>
+          <br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <br />
+          <br />
+          <%= f.label :password_confirmation, "Password Confirmation" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %><br />
+
+         <%= submit_tag "Sign Up", id: "signup-submit" %>    
+
+         <% end %>
+
+<%# render "devise/shared/links" %>

@@ -6,6 +6,8 @@ class HomeController < ApplicationController
     respond_with(@home)
   end
 
+  def create
+  end
 
   private
 

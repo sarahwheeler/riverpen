@@ -8,7 +8,25 @@
 		<li class="nav-link"><%= link_to "+Stream", new_stream_path %></li>
 		<li class="nav-link"><%= link_to "Profile", profiles_path %></li>
 		<li class="nav-link">My Account</li>
-		<li class="btn-signup"><%= link_to "Sign Up!", signup_path, :id => "home-signup-btn" %></li>
+		<li class="btn-signup"><%= link_to "Sign Up!", new_user_registration_path, :id => "home-signup-btn", :remote => "true", :data => { :toggle => "modal", :target =>"#signupModal" } %></li>
 	</ul>
+
+
+	 <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+	        <h4 class="modal-title">Create Your Riverpen Account</h4>
+	      </div>
+	      <div class="modal-body">
+
+	        <%= render "devise/modals/signup_modal" %>
+
+	    </div>
+	  </div>
+	</div>
+
+
 
 </div>

@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/sarahwheeler/riverpen.svg)](https://travis-ci.org/sarahwheeler/riverpen)
 [![Code Climate](https://codeclimate.com/github/sarahwheeler/riverpen/badges/gpa.svg)](https://codeclimate.com/github/sarahwheeler/riverpen)
-[![Test Coverage](https://codeclimate.com/github/sarahwheeler/riverpen/badges/coverage.svg)](https://codeclimate.com/github/sarahwheeler/riverpen)
+
 
 ## Riverpen
 
