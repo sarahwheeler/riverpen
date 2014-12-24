@@ -14,26 +14,26 @@
       <img src="./assets/0.8.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-23T23:22:57-06:00">2014-12-23T23:22:57-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-12-23T23:51:25-06:00">2014-12-23T23:51:25-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.97%</span></span>
+    (<span class="covered_percent"><span class="green">97.03%</span></span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         1.13
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>28</b> files in total.
-    <b>99</b> relevant lines. 
-    <span class="green"><b>96</b> lines covered</span> and
+    <b>101</b> relevant lines. 
+    <span class="green"><b>98</b> lines covered</span> and
     <span class="red"><b>3</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -67,7 +67,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -312,20 +312,20 @@
       
       <tr>
         <td class="strong"><a href="#fd14b046934bd45d32471b2af1e4b3a3a02b557c" class="src_link" title="features/step_definitions/user_steps.rb">features/step_definitions/user_steps.rb</a></td>
-        <td class="yellow strong">85.0 %</td>
-        <td>39</td>
+        <td class="yellow strong">86.96 %</td>
+        <td>44</td>
+        <td>23</td>
         <td>20</td>
-        <td>17</td>
         <td>3</td>
-        <td>1.0</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#01b1698fb2baf01f531d4c671b59b11600d9d28c" class="src_link" title="spec/factories/user.rb">spec/factories/user.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>8</td>
-        <td>6</td>
-        <td>6</td>
+        <td>7</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -450,14 +450,14 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    @home = Home.all</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">    respond_with(@home)</code>
         </li>
@@ -3907,10 +3907,10 @@
         <div class="source_table" id="fd14b046934bd45d32471b2af1e4b3a3a02b557c">
   <div class="header">
     <h3>features/step_definitions/user_steps.rb</h3>
-    <h4><span class="yellow">85.0 %</span> covered</h4>
+    <h4><span class="yellow">86.96 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
+      <b>23</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
       <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
@@ -3924,8 +3924,8 @@
           <code class="ruby">Given(/^I visit the home page$/) do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="2">
+          <span class="hits">2</span>
           
           <code class="ruby">  visit root_path</code>
         </li>
@@ -3948,8 +3948,8 @@
           <code class="ruby">Given(/^I click the &quot;(.*?)&quot; link$/) do |link_text|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">	click_link(link_text)</code>
         </li>
@@ -3972,8 +3972,8 @@
           <code class="ruby">Then(/^a &quot;(.*?)&quot; modal should appear$/) do |arg1|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
           
           <code class="ruby">  page.find(&#39;.modal.fade.in&#39;)</code>
         </li>
@@ -3996,8 +3996,8 @@
           <code class="ruby">When(/^I enter &quot;(.*?)&quot; for &quot;(.*?)&quot;$/) do |value, field_name|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="14">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="6" data-linenumber="14">
+          <span class="hits">6</span>
           
           <code class="ruby">  case field_name</code>
         </li>
@@ -4008,8 +4008,8 @@
           <code class="ruby">  when match(/Email Address/)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
           
           <code class="ruby">  	fill_in &#39;Email Address&#39;, with: value</code>
         </li>
@@ -4020,8 +4020,8 @@
           <code class="ruby">  when match(/Password/)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="18">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="18">
+          <span class="hits">4</span>
           
           <code class="ruby">  	fill_in &#39;Password&#39;, with: value</code>
         </li>
@@ -4074,8 +4074,8 @@
           <code class="ruby">Then(/^I click the &quot;(.*?)&quot; button$/) do |button_name|</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="27">
+          <span class="hits">2</span>
           
           <code class="ruby">  case button_name</code>
         </li>
@@ -4086,8 +4086,8 @@
           <code class="ruby">  when match(/Sign Up/)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="29">
+          <span class="hits">2</span>
           
           <code class="ruby">  	page.find(&#39;#signup-submit&#39;).click()</code>
         </li>
@@ -4152,6 +4152,36 @@
           <code class="ruby">end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">Then(/^a user is created$/) do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
+          
+          <code class="ruby">   @user = User.new(:email =&gt; &quot;wonderwoman@themyscira.gov&quot;, :id =&gt; 101)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
+          
+          <code class="ruby">   @user.should_not eq nil</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
     </ol>
   </pre>
 </div>
@@ -4161,8 +4191,8 @@
     <h3>spec/factories/user.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4185,34 +4215,28 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">    sequence(:name) { |n| &quot;Jane Doe #{n}&quot; }</code>
+          <code class="ruby">    email { |u| &quot;#{u.name.gsub(&#39; &#39;, &#39;&#39;)}@riverpen.com&quot; }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    email { |u| &quot;#{u.name.gsub(&#39; &#39;, &#39;&#39;)}@riverpen.com&quot; }</code>
+          <code class="ruby">    password &#39;password&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    password &#39;password&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
           <code class="ruby">    password_confirmation { |u| u.password }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">	end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>

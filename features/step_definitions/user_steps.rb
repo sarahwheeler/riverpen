@@ -37,3 +37,8 @@ Then(/^a user profile should be created$/) do
   @user.build_profile
   @user.profile.user_id.should_not eq nil
 end
+
+Then(/^a user is created$/) do
+   @user = User.new(:email => "wonderwoman@themyscira.gov", :id => 101)
+   @user.should_not eq nil
+end
