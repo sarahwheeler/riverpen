@@ -1,6 +1,6 @@
-Feature: User logs in
+Feature: User signs up
 	
-	Scenario: A new user signs up and an empty profile is created. 
+	Scenario: A new user signs up and a new User is created. 
 		Given I visit the home page
 		And I click the "Sign Up!" link
 		Then a "sign up" modal should appear
@@ -9,3 +9,7 @@ Feature: User logs in
 		And I enter "grrlpower" for "Confirm Password"
 		Then I click the "Sign Up" button
 		And a user is created
+
+Feature: User logs in
+
+	Scenario: A new user
