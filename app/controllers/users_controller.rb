@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
     @user.build_profile
+    @current_user = @user
   end
 
   def update
