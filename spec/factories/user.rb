@@ -1,7 +1,7 @@
-FactoryGirl.define do
-  factory :user do
-    email { |u| "#{u.name.gsub(' ', '')}@riverpen.com" }
-    password 'password'
-    password_confirmation { |u| u.password }
-	end
+require 'factory_girl'
+
+FactoryGirl.define :user do |user|
+  user.email                 { "wonderwoman@themyscira.gov"}
+  user.password              { "grrlpower"   }
+  user.password_confirmation { "grrlpower"   }
 end

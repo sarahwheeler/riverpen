@@ -19,10 +19,14 @@ end
 
 When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
   case field_name
+  when match(/Your Email Address/)
+    fill_in 'email-signup', with: value, :match => :prefer_exact
+  when match(/Signup Password/)
+  	fill_in 'pw-signup', with: value, :match => :prefer_exact
   when match(/Email Address/)
-  	fill_in 'Email Address', with: value
-  when match(/Password/)
-  	fill_in 'Password', with: value
+    fill_in 'email-login', with: value, :match => :prefer_exact
+  when match(/Login Password/)
+    fill_in 'pw-login', with: value, :match => :prefer_exact
   when match(/Confirm Password/)
   	fill_in "Confirm Password", with: value
   else 
@@ -35,7 +39,7 @@ Then(/^I click the "(.*?)" button$/) do |button_name|
   when match(/Sign Up/)
   	page.find('#signup-submit').click()
   when match(/Log in/)
-    page.find('#login-btn-navbar').click()
+    click_link('Log in')
   when match(/Login/)
     page.find('#login-submit').click()
   else 
@@ -50,11 +54,29 @@ Then(/^a user profile should be created$/) do
 end
 
 Then(/^a user is created$/) do
-   @user = User.new(:email => "wonderwoman@themyscira.gov", :id => 101)
+   @user = User.create(:email => "wonderwoman@themyscira.gov", password: "grrlpower", :id => 101)
    @user.should_not eq nil
 end
 
-Then(/^"(.*?)" appears in the navbar$/) do |arg1|
-  @user = User.new(:email => "wonderwoman@themyscira.gov", :id => 101)
-  @current_user.id.should == 101
+Given /^a user "(.*?)" with password "(.*?)"$/ do |email, password|
+  u = User.new(:email => email,
+   :password => password,
+   :password_confirmation => password)
+  u.save!
+end
+
+When(/^I wait "(.*?)" seconds$/) do |seconds|
+  sleep (seconds.to_i + 0.01)
+end
+
+Then(/^Log out appears in the navbar$/) do  
+  within find('.alert') do
+    save_and_open_page
+    page.should have_text('Signed in successfully.')
+    save_and_open_page
+  end
+end
+
+Given(/^show me the page$/) do
+  save_and_open_page
 end

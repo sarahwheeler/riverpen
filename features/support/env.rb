@@ -6,11 +6,12 @@ SimpleCov.start
 # instead of editing this one. Cucumber will automatically load all features/**/*.rb
 # files.
 require 'cucumber/rails'
-require 'rspec/expectations'
 require "Capybara"
 require "Capybara/cucumber"
-require "rspec"
 require 'capybara/poltergeist'
+require "rspec"
+require 'rspec/expectations'
+require 'factory_girl'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any

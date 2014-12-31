@@ -26,9 +26,10 @@ group :test, :development do
 	gem 'cucumber-rails', :require => false
 	gem 'rspec-expectations'
 	gem 'database_cleaner'
-	gem 'factory_girl_rails'
+	gem 'factory_girl'
     gem 'capybara'
     gem 'rspec'
+    gem 'launchy'
 	gem "poltergeist"
 	gem "selenium-webdriver"
     gem 'simplecov'
