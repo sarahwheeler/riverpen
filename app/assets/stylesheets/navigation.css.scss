@@ -22,11 +22,11 @@ $lime: #BCC747;
 	position: fixed;
 	top: 0;
 	left: 0;
-	height: 40px;
+	height: 50px;
 	width: 100%;
 	margin-bottom: 20px;
 	padding-top: 8px;
-	background-color: $wine;
+	background-color: $teal;
 }
 
 #nav-logo {
@@ -59,27 +59,8 @@ li.nav-link {
 		text-decoration: none;
 	}
 	a:hover {
-		color: $teal;
+		color: $wine;
 		background-color: inherit;
-	}
-}
-
-li.btn-signup {
-	display: inline;
-	padding: 8px 8px;
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 1em;
-	background-color: $teal;
-	border: 1px solid $darkblue;
-	border-radius: 10px;
-	width: 75px;
-	height: 30px;
-	a {
-		text-decoration: none;
-		color: white;
-	}
-	a:hover {
-		background-color: inherit;
-		color: $darkblue;
+		font-weight: 700;
 	}
 }
