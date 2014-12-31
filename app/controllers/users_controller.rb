@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -23,8 +25,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-    @user.build_profile
-    @current_user = @user
+    if @user.save
+      @user.build_profile
+      sign_in @user
+      flash[:success] = "Welcome to Riverpen!"
+      redirect_to @streams_path
+    else
+      render 'new'
+    end
   end
 
   def update

@@ -6,10 +6,12 @@
 		<li class="nav-link"><%= link_to "Streamline", streams_path %></li>
 		<li class="nav-link"><%= link_to "+Post", '#' %></li>
 		<li class="nav-link"><%= link_to "+Stream", new_stream_path %></li>
-		<li class="nav-link"><%= link_to "Profile", profiles_path %></li>
-		<li class="nav-link">My Account</li>
-		<li class="btn-login"><%= link_to "Log in", new_user_session_path, :id => "login-btn-navbar", :remote => "true", :data => { :toggle => "modal", :target =>"#loginModal" } %></li>
-		<li class="btn-signup"><%= link_to "Sign Up!", new_user_registration_path, :id => "home-signup-btn", :remote => "true", :data => { :toggle => "modal", :target =>"#signupModal" } %></li>
+		<% if user_signed_in? %>
+			<li class="nav-link"><%= link_to "Log out", logout_path %></li>
+		<% else %>
+			<li class="nav-link"><%= link_to "Log in", new_user_session_path, :remote => "true", :data => { :toggle => "modal", :target =>"#loginModal" } %></li>
+			<li class="nav-link"><%= link_to "Sign Up!", new_user_registration_path, :remote => "true", :data => { :toggle => "modal", :target =>"#signupModal" } %></li>
+		<% end %>
 	</ul>
 
 
@@ -17,10 +19,9 @@
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Nevermind</button>
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 	        <h4 class="modal-title">Create Your Riverpen Account</h4>
 	      </div>
-
 	      <div class="modal-body">
 	        <%= render "devise/modals/signup_modal" %>
 	    	</div>
@@ -32,9 +33,8 @@
 	<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
-
 	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Nevermind</button>
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
 	        <h4 class="modal-title">Log into Riverpen</h4>
 	      </div>
 

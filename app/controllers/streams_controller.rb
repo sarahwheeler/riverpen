@@ -1,4 +1,6 @@
 class StreamsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_stream, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
