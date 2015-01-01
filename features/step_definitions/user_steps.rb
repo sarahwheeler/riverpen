@@ -1,3 +1,5 @@
+require_relative '../spec_helper'
+
 Given(/^I visit the home page$/) do
   visit root_path
 end
@@ -25,6 +27,10 @@ When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
   	fill_in 'pw-signup', with: value, :match => :prefer_exact
   when match(/Email Address/)
     fill_in 'email-login', with: value, :match => :prefer_exact
+  when match(/Pick a Username:/)
+    within('.login-modal') do
+      fill_in 'username-signup', with: value
+    end
   when match(/Login Password/)
     fill_in 'pw-login', with: value, :match => :prefer_exact
   when match(/Confirm Password/)
@@ -54,14 +60,12 @@ Then(/^a user profile should be created$/) do
 end
 
 Then(/^a user is created$/) do
-   @user = User.create(:email => "wonderwoman@themyscira.gov", password: "grrlpower", :id => 101)
+   @user = FactoryGirl.create(:wonderwoman)
    @user.should_not eq nil
 end
 
-Given /^a user "(.*?)" with password "(.*?)"$/ do |email, password|
-  u = User.new(:email => email,
-   :password => password,
-   :password_confirmation => password)
+Given /^an existing user$/ do
+  u = FactoryGirl.create(:wonderwoman)
   u.save!
 end
 

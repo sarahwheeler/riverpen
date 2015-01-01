@@ -11,7 +11,7 @@ require "Capybara/cucumber"
 require 'capybara/poltergeist'
 require "rspec"
 require 'rspec/expectations'
-require 'factory_girl'
+require 'factory_girl_rails'
 
 # Capybara defaults to CSS3 selectors rather than XPath.
 # If you'd prefer to use XPath, just uncomment this line and adjust any
