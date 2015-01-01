@@ -3,12 +3,12 @@
 
   <div class="field">
     <%= f.label :email, 'Your Email Address' %><br />
-    <%= f.email_field :email, autofocus: true, id: 'email-signup', name: 'email-signup' %>
+    <%= f.email_field :email, autofocus: true, id: 'email-signup' %>
   </div>
 
   <div class="field">
     <%= f.label :username, 'Pick a Username:' %><br />
-    <%= f.username :username, id: 'username-signup', name: 'username-signup' %>
+    <%= f.text_field :username, id: 'username-signup' %>
   </div>
 
   <div class="field">
@@ -16,7 +16,7 @@
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, name: 'pw-signup', autocomplete: "off", id: 'pw-signup' %>
+    <%= f.password_field :password, autocomplete: "off", id: 'pw-signup' %>
   </div>
 
   <div class="field">
