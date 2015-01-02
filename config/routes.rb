@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'users/:id/profile' => 'users#profile', as: :profile
   get 'users/:id/edit_profile' => 'profiles#edit', as: :edit_profile
 
+  get 'devise/registrations/edit' => 'users#settings', as: :settings
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

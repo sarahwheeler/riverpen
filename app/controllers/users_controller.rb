@@ -49,6 +49,9 @@ class UsersController < ApplicationController
     @profile = Profile.where(:user_id => @user.id)
   end
 
+  def settings
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
