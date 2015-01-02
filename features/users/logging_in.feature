@@ -19,8 +19,8 @@ Feature: User can sign up and log in
 		Given I visit the home page
 		And I click the "Log in" button
 		Then a "login" modal should appear
-		When I enter "wonderwoman@themyscira.gov" for "Email Address"
-		And I enter "grrlpower" for "Login Password"
+		When I enter "wonderwoman" for "Login"
+		And I enter "grrlpower" for "Password"
 		Then I click the "Login" button
 		When I wait "5" seconds
 		And Log out appears in the navbar

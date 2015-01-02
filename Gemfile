@@ -27,12 +27,13 @@ group :test, :development do
 	gem 'rspec-expectations'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails', :require => false
-    gem 'capybara'
-    gem 'rspec'
-    gem 'launchy'
+  gem 'capybara'
+  gem 'rspec'
+  gem 'launchy'
+  gem 'faker'
 	gem "poltergeist"
 	gem "selenium-webdriver"
-    gem 'simplecov'
+  gem 'simplecov'
 	gem 'spring'		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 

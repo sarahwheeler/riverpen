@@ -17,7 +17,7 @@
 
 
 /config/secrets.yml
-/coverage
+/coverage/*
 .DS_Store
 
 todo.txt

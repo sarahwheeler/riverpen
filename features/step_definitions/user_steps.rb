@@ -21,20 +21,28 @@ end
 
 When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
   case field_name
+  # Sign Up Modal
   when match(/Your Email Address/)
     fill_in 'email-signup', with: value, :match => :prefer_exact
-  when match(/Signup Password/)
-  	fill_in 'pw-signup', with: value, :match => :prefer_exact
-  when match(/Email Address/)
-    fill_in 'email-login', with: value, :match => :prefer_exact
+  # Sign Up Modal
   when match(/Pick a Username:/)
-    within('.login-modal') do
+    within('.signup-modal') do
       fill_in 'username-signup', with: value
     end
-  when match(/Login Password/)
-    fill_in 'pw-login', with: value, :match => :prefer_exact
+  # Sign Up Modal
+  when match(/Signup Password/)
+  	fill_in 'pw-signup', with: value, :match => :prefer_exact
+  # Sign Up Modal
   when match(/Confirm Password/)
-  	fill_in "Confirm Password", with: value
+    fill_in "Confirm Password", with: value
+  # Login Modal
+  when match(/Login/)
+    within('.login-modal') do 
+      fill_in 'user_login', with: value, :match => :prefer_exact
+    end
+  # Login Modal
+  when match(/Password/)
+    fill_in 'pw-login', with: value, :match => :prefer_exact
   else 
   	raise StandardError, "No field name #{field_name}"
   end
@@ -47,25 +55,27 @@ Then(/^I click the "(.*?)" button$/) do |button_name|
   when match(/Log in/)
     click_link('Log in')
   when match(/Login/)
-    page.find('#login-submit').click()
+    within('.login-modal') do
+      page.find('#login-submit').click()
+    end
   else 
   	raise StandardError, "No field name #{field_name}"
   end
 end
 
 Then(/^a user profile should be created$/) do
-  @user = User.new(:email => "wonderwoman@themyscira.gov", :id => 101)
+  @user = FactoryGirl.create(:user)
   @user.build_profile
   @user.profile.user_id.should_not eq nil
 end
 
 Then(/^a user is created$/) do
-   @user = FactoryGirl.create(:wonderwoman)
+   @user = FactoryGirl.create(:user)
    @user.should_not eq nil
 end
 
 Given /^an existing user$/ do
-  u = FactoryGirl.create(:wonderwoman)
+  u = FactoryGirl.create(:user)
   u.save!
 end
 
@@ -75,9 +85,7 @@ end
 
 Then(/^Log out appears in the navbar$/) do  
   within find('.alert') do
-    save_and_open_page
     page.should have_text('Signed in successfully.')
-    save_and_open_page
   end
 end
 
