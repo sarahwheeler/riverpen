@@ -66,12 +66,42 @@ li.nav-link {
 }
 
 .menu-patch {
-	left: -15px;
+	left: -20px;
 	min-width: 90px;
 	margin: 15px 0 0;
+}
+
+.dropdown-menu>li {
+	padding-top: 3px;
+	padding-bottom: 4px;
+	margin-bottom: 2px;
+}
+
+.dropdown-menu>li:hover {
+	background-color: #E8E8E8;
 }
 
 .dropdown-menu>li>a {
 	color: $wine;
 	padding: 3px 25px;
+	margin-left: 4px;
+	text-align: center;
+	a:hover {
+		background-color: inherit;
+	}
+}
+
+.dropdown-menu>li>div>a {
+	color: $wine;	
+	text-align: center;
+	font-size:1em;
+}
+
+
+.dropdown-link>div>.glyphicon {
+	color: $wine;
+	margin-left: 14px;
+	margin-top: 0px;
+	margin-right: -4px;
+	font-size: 0.85em;
 }
