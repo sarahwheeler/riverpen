@@ -6,11 +6,28 @@
 		<li class="nav-link"><%= link_to "Streamline", streams_path %></li>
 		<li class="nav-link"><%= link_to "+Post", '#' %></li>
 		<li class="nav-link"><%= link_to "+Stream", new_stream_path %></li>
+
 		<% if user_signed_in? %>
+
+			<li class="nav-link">
+				<div class="dropdown">
+					<a data-target="#" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">
+    			Account
+    				<span class="caret"></span>
+  				</a>
+  				<ul class="dropdown-menu menu-patch" aria-labelledby="dropdownNavbar">	
+						<li class="dropdown-link"><%= link_to "Profile", profile_path(@user.profile.id) %></li>
+						<li class="dropdown-link"><%= link_to "Settings", '#' %></li>
+					</ul>
+				</div>
+			</li>
 			<li class="nav-link"><%= link_to "Log out", logout_path %></li>
+
 		<% else %>
+
 			<li class="nav-link"><%= link_to "Log in", new_user_session_path, :remote => "true", :data => { :toggle => "modal", :target =>"#loginModal" } %></li>
 			<li class="nav-link"><%= link_to "Sign Up!", new_user_registration_path, :remote => "true", :data => { :toggle => "modal", :target =>"#signupModal" } %></li>
+
 		<% end %>
 	</ul>
 

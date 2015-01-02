@@ -52,15 +52,26 @@ li.nav-link {
 	margin-right: 15px;
 	color: white;
 	font-family: 'News Cycle', sans-serif !important;
-	font-size: 0.95em;
+	font-size: 1.05em;
 	font-weight: 400;	
 	a {
 		color: white;
 		text-decoration: none;
+		padding: 0 10px;
 	}
 	a:hover {
 		color: $wine;
 		background-color: inherit;
-		font-weight: 700;
 	}
+}
+
+.menu-patch {
+	left: -15px;
+	min-width: 90px;
+	margin: 15px 0 0;
+}
+
+.dropdown-menu>li>a {
+	color: $wine;
+	padding: 3px 25px;
 }

@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @user.save
     if @user.save
       @user.build_profile(user_id: @user.id)
+      @profile = Profile.where(:user_id => @user.id)
       sign_in @user
       flash[:success] = "Welcome to Riverpen!"
       redirect_to @streams_path

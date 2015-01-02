@@ -919,6 +919,7 @@ hr {
   border-left: 4px solid transparent;
 }
 .dropdown {
+  display: inline-block;
   position: relative;
 }
 .dropdown-toggle:focus {
