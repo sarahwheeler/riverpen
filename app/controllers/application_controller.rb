@@ -7,6 +7,17 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  before_action :set_user
+
+  def set_user
+    if current_user.nil?
+      puts "NO CURRENT USER"
+    else
+      @user = current_user
+      @profile = Profile.find_by_user_id(@user.id)
+    end
+  end
+
   protected
 
   def configure_permitted_parameters

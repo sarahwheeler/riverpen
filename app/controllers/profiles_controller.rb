@@ -5,12 +5,13 @@ class ProfilesController < ApplicationController
 
   respond_to :html
 
-  def index
-    @profiles = Profile.all
-    respond_with(@profiles)
-  end
+#  def index
+#   @profiles = Profile.all
+#   respond_with(@profiles)
+#  end
 
   def show
+    @user = User.find_by_id(@profile.user_id)
     respond_with(@profile)
   end
 
@@ -44,6 +45,7 @@ class ProfilesController < ApplicationController
     end
 
     def profile_params
-      params[:profile]
+      #params[:profile]
+      params.require(:profile).permit(:name, :age, :location, :website, :bio)
     end
 end

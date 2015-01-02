@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :profile]
 
   respond_to :html
 
@@ -26,11 +26,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     @user.save
     if @user.save
-      @user.build_profile(user_id: @user.id)
-      @profile = Profile.where(:user_id => @user.id)
+      @profile = @user.build_profile(user_id: @user.id)
       sign_in @user
       flash[:success] = "Welcome to Riverpen!"
-      redirect_to @streams_path
+      redirect_to streams_path
     else
       render 'new'
     end
@@ -44,6 +43,10 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_with(@user)
+  end
+
+  def profile
+    @profile = Profile.where(:user_id => @user.id)
   end
 
   private

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :streams
-  resources :profiles
+  #resources :profiles
   resources :home
 
   root :to => "home#index"
@@ -14,6 +14,9 @@ Rails.application.routes.draw do
    get "login", to: "devise/sessions#new"
    get "logout", to: "devise/sessions#destroy"
   end
+
+  get 'users/:id/profile' => 'users#profile', as: :profile
+  get 'users/:id/edit_profile' => 'profiles#edit', as: :edit_profile
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
