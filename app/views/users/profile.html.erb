@@ -2,16 +2,18 @@
 
 <h3><%= @user.username %>'s Profile</h3>
 
+<%= button_to "Edit", edit_profile_path(@profile), :class => "button", :method => :get  %>
+
 <h5>Name: </h5>
-<p><%= @profile.name %></p>
+<p><%= @profile.name  %></p>
 <h5>Age: </h5>
-<p><%# @profile.age %></p>
+<p><%= @profile.age %></p>
 <h5>Location: </h5>
-<p><%# @profile.location %></p>
+<p><%= @profile.location %></p>
 <h5>Website: </h5>
-<p><%# @profile.website %></p>
+<p><%= @profile.website %></p>
 <h5>Bio: </h5>
-<p><%# @profile.bio %></p>
+<p><%= @profile.bio %></p>
 
 <%# link_to 'Edit', edit_profile_path(@profile) %> |
 <%# link_to 'Back', profiles_path %>

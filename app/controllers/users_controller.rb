@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-
   before_action :set_user, only: [:show, :edit, :update, :destroy, :profile]
-
+  
   respond_to :html
 
   def index
@@ -16,23 +15,24 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    puts "LOOKY HERE IT'S A USER: #{@user}"
     respond_with(@user)
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def create
     @user = User.new(user_params)
     @user.save
-    if @user.save
-      @profile = @user.build_profile(user_id: @user.id)
+     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to Riverpen!"
       redirect_to streams_path
     else
-      render 'new'
+      render "new"
     end
+    
   end
 
   def update
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def profile
-    @profile = Profile.where(:user_id => @user.id)
+    @profile = Profile.find_by_user_id(@user.id)    
   end
 
   def settings

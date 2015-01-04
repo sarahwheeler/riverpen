@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150101232244) do
     t.text     "bio"
     t.string   "website"
     t.integer  "age"
+    t.string   "location"
     t.integer  "user_id"
   end
 

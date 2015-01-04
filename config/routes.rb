@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   
   devise_for :users
 
+  resources :users do
+    resources :profiles
+  end
+
   resources :posts
   resources :streams
-  #resources :profiles
   resources :home
 
   root :to => "home#index"
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
 
   get 'users/:id/profile' => 'users#profile', as: :profile
   get 'users/:id/edit_profile' => 'profiles#edit', as: :edit_profile
+  patch 'users/:id/edit_profile' => 'profiles#update'
 
   get 'devise/registrations/edit' => 'users#settings', as: :settings
 

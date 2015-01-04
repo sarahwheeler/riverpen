@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   					:uniqueness => {
 					    :case_sensitive => false
 					  }
+  after_create :build_profile
+
 
   # For Devise: Virtual attribute for authenticating by either username or email
   # This is in addition to a real persisted field like 'username'
@@ -28,5 +30,10 @@ class User < ActiveRecord::Base
 	    where(conditions).first
 	  end
 	end
+
+  def build_profile
+    puts "PROFILE IS BUILDING\n\n"
+    Profile.create(user_id: self.id)
+  end
 
 end
