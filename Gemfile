@@ -27,6 +27,7 @@ group :test, :development do
 	gem 'rspec-expectations'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails', :require => false
+	gem "better_errors"
   gem 'capybara'
   gem 'rspec'
   gem 'launchy'
