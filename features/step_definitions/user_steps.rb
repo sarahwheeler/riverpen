@@ -74,9 +74,14 @@ Then(/^a user is created$/) do
    @user.should_not eq nil
 end
 
-Given /^an existing user$/ do
-  u = FactoryGirl.create(:user)
-  u.save!
+Given(/^I log in as an existing user$/) do
+  @user = FactoryGirl.create(:user)
+  click_link('Log in')
+  within find(".login-modal") do
+    fill_in 'Login', with: @user.username
+    fill_in 'pw-login', with: @user.password
+  end
+  click_button 'Log in'
 end
 
 When(/^I wait "(.*?)" seconds$/) do |seconds|
@@ -91,4 +96,8 @@ end
 
 Given(/^show me the page$/) do
   save_and_open_page
+end
+
+Given(/^I click the Account dropdown$/) do
+  click_link('.dropdown-toggle')
 end

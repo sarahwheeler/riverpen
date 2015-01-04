@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   def set_user
     if current_user.nil?
-      puts "NO CURRENT USER"
     else
       @user = current_user
       @profile = Profile.find_by_user_id(@user.id)

@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
 	end
 
   def build_profile
-    puts "PROFILE IS BUILDING\n\n"
     Profile.create(user_id: self.id)
   end
 

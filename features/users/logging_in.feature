@@ -3,7 +3,7 @@ Feature: User can sign up and log in
 	And make blog streams
 	And make using the site worth their time
 	
-	Scenario: A new user signs up and a new User is created. 
+	Scenario: A new user signs up 
 		Given I visit the home page
 		And I click the "Sign Up!" link
 		Then a "sign up" modal should appear
