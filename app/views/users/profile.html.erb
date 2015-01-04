@@ -2,7 +2,8 @@
 
 <h3><%= @user.username %>'s Profile</h3>
 
-<%= button_to "Edit", edit_profile_path(@profile), :class => "button", :method => :get  %>
+<%= button_to edit_profile_path(@profile), :class => "btn btn-default btn-lg", :title => "Edit Profile", :method => :get  do %><span class='glyphicon glyphicon-edit'></span>
+<% end %>
 
 <h5>Name: </h5>
 <p><%= @profile.name  %></p>
@@ -14,6 +15,3 @@
 <p><%= @profile.website %></p>
 <h5>Bio: </h5>
 <p><%= @profile.bio %></p>
-
-<%# link_to 'Edit', edit_profile_path(@profile) %> |
-<%# link_to 'Back', profiles_path %>

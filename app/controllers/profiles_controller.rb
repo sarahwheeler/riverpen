@@ -1,7 +1,6 @@
 
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  #before_action :set_user, only: [:edit, :update, :destroy]
   before_action :set_profile, only: [:edit, :update, :destroy]
 
   respond_to :html

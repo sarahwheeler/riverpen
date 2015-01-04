@@ -16,13 +16,12 @@ Rails.application.routes.draw do
    get "signup", to: "devise/registrations#new"
    get "login", to: "devise/sessions#new"
    get "logout", to: "devise/sessions#destroy"
+   get "settings", to: "devise/registrations#edit"
   end
 
   get 'users/:id/profile' => 'users#profile', as: :profile
   get 'users/:id/edit_profile' => 'profiles#edit', as: :edit_profile
   patch 'users/:id/edit_profile' => 'profiles#update'
-
-  get 'devise/registrations/edit' => 'users#settings', as: :settings
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
