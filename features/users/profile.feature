@@ -34,3 +34,12 @@ Feature: User has a profile
 		And I see "http://www.dccomics.com/characters/wonder-woman" as my profile "website"
 		And I see "Using jewelry as deadly weapons since 1941." as my profile "bio"
 
+	Scenario: User deletes account and profile.
+		Given I visit the home page
+		And I log in as an existing user
+		And I click the "Settings" link
+		Then I should see the "Settings" page
+		When I click the "Cancel my account" button
+		And I confirm the alert
+		Then my account should be deleted
+		And my profile should be deleted

@@ -6,10 +6,15 @@ end
 
 Given(/^I click the "(.*?)" link$/) do |link|
   case link
-  when match(/Profile/)
+  when match(/Profile/)  
     within('div.dropdown') do
      page.find('span.caret').click()
      click_link('Profile')
+    end
+  when match(/Settings/)
+    within('div.dropdown') do
+      page.find('span.caret').click()
+      click_link('Settings')
     end
   else
 	 click_link(link)
@@ -18,7 +23,7 @@ end
 
 Then(/^a "(.*?)" modal should appear$/) do |modal_kind|
   case modal_kind
-  when match(/sign up/)
+  when match(/sign up/) 
     page.should have_selector('.in')
   when match(/login/)
     page.should have_selector('.in')
@@ -79,6 +84,9 @@ Then(/^I click the "(.*?)" button$/) do |button_name|
     page.find('.btn').click()
   when match(/Update Profile/)
     click_button('Update Profile')
+  # Settings
+  when match(/Cancel my account/)
+    click_button('Cancel my account')
   else 
   	raise StandardError, "No field name #{field_name}"
   end
@@ -121,10 +129,11 @@ end
 Then(/^I should see the "(.*?)" page$/) do |page_name|
   case page_name
   when match(/Edit Profile/i)
-    current_path.should eq edit_profile_path(@user.id)
+    has_content?("Profile")
   when match(/Profile/i)
-    @user = User.find_by_username('wonderwoman')
-    current_path.should eq profile_path(@user.id)
+    has_content?("Profile")
+  when match(/Settings/i)
+    has_content?(/Account Settings/)
   else
     raise StandardError, "No page named #{page_name}"
   end
@@ -132,4 +141,23 @@ end
 
 Then(/^I see "(.*?)" as my profile "(.*?)"$/) do |value, field|
   has_content?(value)
+end
+
+When(/^I confirm the alert$/) do
+  page.evaluate_script('window.confirm')
+end
+
+Then(/^my account should be deleted$/) do
+  sleep(3)
+  page.should have_text('Your account has been successfully cancelled.')
+end
+
+Then(/^my profile should be deleted$/) do
+  current_driver = Capybara.current_driver
+  begin
+    Capybara.current_driver = :rack_test
+    page.driver.submit :delete, "/users/sign_out", {}
+  ensure
+    Capybara.current_driver = current_driver
+  end
 end

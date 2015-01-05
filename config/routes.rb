@@ -16,7 +16,7 @@ Rails.application.routes.draw do
    get "signup", to: "devise/registrations#new"
    get "login", to: "devise/sessions#new"
    get "logout", to: "devise/sessions#destroy"
-   get "settings", to: "devise/registrations#edit"
+   get "/settings", to: "devise/registrations#edit"
   end
 
   get 'users/:id/profile' => 'users#profile', as: :profile
