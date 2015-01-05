@@ -19,7 +19,7 @@
 
   <div class="field">
     <%= f.label :age %><br />
-    <%= select(@profile, :age, (18..99).to_a) %>
+    <%= select(@profile, :age, (18..99).to_a, {}, :id => "profile-age-field") %>
   </div>
 
   <div class="field">

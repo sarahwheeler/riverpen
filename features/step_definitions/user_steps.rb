@@ -4,8 +4,16 @@ Given(/^I visit the home page$/) do
   visit root_path
 end
 
-Given(/^I click the "(.*?)" link$/) do |link_text|
-	click_link(link_text)
+Given(/^I click the "(.*?)" link$/) do |link|
+  case link
+  when match(/Profile/)
+    within('div.dropdown') do
+     page.find('span.caret').click()
+     click_link('Profile')
+    end
+  else
+	 click_link(link)
+  end
 end
 
 Then(/^a "(.*?)" modal should appear$/) do |modal_kind|
@@ -24,15 +32,12 @@ When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
   # Sign Up Modal
   when match(/Your Email Address/)
     fill_in 'email-signup', with: value, :match => :prefer_exact
-  # Sign Up Modal
   when match(/Pick a Username:/)
     within('.signup-modal') do
       fill_in 'username-signup', with: value
     end
-  # Sign Up Modal
   when match(/Signup Password/)
   	fill_in 'pw-signup', with: value, :match => :prefer_exact
-  # Sign Up Modal
   when match(/Confirm Password/)
     fill_in "Confirm Password", with: value
   # Login Modal
@@ -40,9 +45,19 @@ When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
     within('.login-modal') do 
       fill_in 'user_login', with: value, :match => :prefer_exact
     end
-  # Login Modal
   when match(/Password/)
     fill_in 'pw-login', with: value, :match => :prefer_exact
+  # Edit Profile
+  when match(/Name/)
+    fill_in 'Name', with: value
+  when match(/Age/)
+    select('23', from: 'profile-age-field')
+  when match(/Location/)
+    fill_in 'Location', with: value
+  when match(/Website/)
+    fill_in 'Website', with: value
+  when match(/Bio/)
+    fill_in 'Bio', with: value
   else 
   	raise StandardError, "No field name #{field_name}"
   end
@@ -50,6 +65,7 @@ end
 
 Then(/^I click the "(.*?)" button$/) do |button_name|
   case button_name
+  # Nav Bar
   when match(/Sign Up/)
   	page.find('#signup-submit').click()
   when match(/Log in/)
@@ -58,6 +74,11 @@ Then(/^I click the "(.*?)" button$/) do |button_name|
     within('.login-modal') do
       page.find('#login-submit').click()
     end
+  # Edit Profile
+  when match(/Edit/)
+    page.find('.btn').click()
+  when match(/Update Profile/)
+    click_button('Update Profile')
   else 
   	raise StandardError, "No field name #{field_name}"
   end
@@ -75,13 +96,12 @@ Then(/^a user is created$/) do
 end
 
 Given(/^I log in as an existing user$/) do
-  @user = FactoryGirl.create(:user)
   click_link('Log in')
   within find(".login-modal") do
-    fill_in 'Login', with: @user.username
-    fill_in 'pw-login', with: @user.password
+    fill_in 'Login', with: "wonderwoman"
+    fill_in 'pw-login', with: "grrlpower"
+    page.find('#login-submit').click()
   end
-  click_button 'Log in'
 end
 
 When(/^I wait "(.*?)" seconds$/) do |seconds|
@@ -98,6 +118,18 @@ Given(/^show me the page$/) do
   save_and_open_page
 end
 
-Given(/^I click the Account dropdown$/) do
-  click_link('.dropdown-toggle')
+Then(/^I should see the "(.*?)" page$/) do |page_name|
+  case page_name
+  when match(/Edit Profile/i)
+    current_path.should eq edit_profile_path(@user.id)
+  when match(/Profile/i)
+    @user = User.find_by_username('wonderwoman')
+    current_path.should eq profile_path(@user.id)
+  else
+    raise StandardError, "No page named #{page_name}"
+  end
+end
+
+Then(/^I see "(.*?)" as my profile "(.*?)"$/) do |value, field|
+  has_content?(value)
 end
