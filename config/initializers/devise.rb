@@ -260,4 +260,6 @@ Devise.setup do |config|
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
   config.authentication_keys = [ :login ]
+
+  config.sign_out_via = Rails.env.test? ? :get : :delete
 end
