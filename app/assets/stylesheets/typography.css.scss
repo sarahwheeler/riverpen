@@ -1,0 +1,24 @@
+//  ** TYPOGRAPHY  **  //
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+
+//  ** COLOR CODES **  //
+
+$teal: #52B4AF; 
+$darkteal: #063E53;
+$blue: #0F9FB4;
+$darkblue: #293E6A;
+$dustypurple: #9C6A8D;
+$hotpurple: #8B1C55;
+$darkpurple: #3F2860;
+$red: #AB3334;
+$wine: #57102C;
+$lime: #BCC747;
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Fjalla One', sans-serif;
+	margin-bottom: 15px;
+	text-align: center;
+}

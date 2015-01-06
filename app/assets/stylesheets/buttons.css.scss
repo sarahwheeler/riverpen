@@ -1,0 +1,43 @@
+//  ** TYPOGRAPHY  **  //
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+
+//  ** COLOR CODES **  //
+
+$teal: #52B4AF; 
+$darkteal: #063E53;
+$blue: #0F9FB4;
+$darkblue: #293E6A;
+$dustypurple: #9C6A8D;
+$hotpurple: #8B1C55;
+$darkpurple: #3F2860;
+$red: #AB3334;
+$wine: #57102C;
+$lime: #BCC747;
+
+
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border-radius: 25px;
+	border: 2px $teal solid;
+	background-color: white;
+	color: $darkteal;
+	padding: 8px 15px;
+
+}
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-radius: 25px;
+	border: 2px $darkteal solid;
+	background-color: $darkteal;
+	color: white;
+	padding: 8px 15px;
+}
+
+.buttonholder {
+	text-align: center;
+}
