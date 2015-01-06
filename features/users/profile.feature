@@ -34,7 +34,7 @@ Feature: User has a profile
 		And I see "http://www.dccomics.com/characters/wonder-woman" as my profile "website"
 		And I see "Using jewelry as deadly weapons since 1941." as my profile "bio"
 
-	Scenario: User deletes account and profile.
+	Scenario: User deletes profile.
 		Given I visit the home page
 		And I log in as an existing user
 		And I click the "Settings" link

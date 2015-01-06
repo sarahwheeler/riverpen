@@ -153,6 +153,8 @@ Then(/^my account should be deleted$/) do
 end
 
 Then(/^my profile should be deleted$/) do
+  # Needs to be refactored in actually measuring the profile deletion--this
+  # really just signs them out
   current_driver = Capybara.current_driver
   begin
     Capybara.current_driver = :rack_test
