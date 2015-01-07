@@ -29,12 +29,18 @@ $lime: #BCC747;
 	background-color: $teal;
 }
 
+.navbar-content {
+	vertical-align: -webkit-baseline-middle;
+	margin-top: 2px;
+}
+
 #nav-logo {
 	margin-left: 25px;
 	margin-right: 100px;
 	color: white;
 	font-family: 'Fjalla One', sans-serif;
-	font-size: 1.8em; 
+	font-size: 2.25em; 
+	vertical-align: -webkit-baseline-middle;
 }
 
 #nav-menu {
@@ -58,6 +64,7 @@ li.nav-link {
 		color: white;
 		text-decoration: none;
 		padding: 0 10px;
+		font-size: 1.2em;
 	}
 	a:hover {
 		color: $wine;
