@@ -15,8 +15,7 @@ Feature: User has a profile
 		And a user profile should be created
 
 	Scenario: User edits their profile.
-		Given I visit the home page
-		And I log in as an existing user
+		Given I am logged in
 		And I click the "Profile" link
 		Then I should see the "Profile" page
 		When I click the "Edit" button
@@ -35,8 +34,7 @@ Feature: User has a profile
 		And I see "Using jewelry as deadly weapons since 1941." as my profile "bio"
 
 	Scenario: User deletes profile.
-		Given I visit the home page
-		And I log in as an existing user
+		Given I am logged in
 		And I click the "Settings" link
 		Then I should see the "Settings" page
 		When I click the "Cancel my account" button

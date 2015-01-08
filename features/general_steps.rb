@@ -1,4 +1,4 @@
-require_relative '../spec_helper'
+require_relative 'spec_helper'
 
 #   HELPERS
 
@@ -71,12 +71,14 @@ end
 
 Then(/^I should see the "(.*?)" page$/) do |page_name|
   case page_name
-  when match(/Edit Profile/i)
+  when match(/Edit Profile/)
     has_content?("Profile")
-  when match(/Profile/i)
+  when match(/Profile/)
     has_content?("Profile")
-  when match(/Settings/i)
+  when match(/Settings/)
     has_content?(/Account Settings/)
+  when match(/Create a Stream/)
+    has_content?(/Create a Stream/)
   else
     raise StandardError, "No page named #{page_name}"
   end
@@ -124,3 +126,22 @@ When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
   	raise StandardError, "No field name #{field_name}"
   end
 end
+
+When(/^I select "(.*?)" from "(.*?)"$/) do |option, dropdown|
+  case dropdown
+  when match(/Category/)
+    select option, from: dropdown
+  when match(/Visibility/)
+    select option, from: dropdown
+  else
+    raise StandardError, "Please define #{dropdown} in the step_definitions file."
+  end
+end
+
+
+
+
+
+
+
+

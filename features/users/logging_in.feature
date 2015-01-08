@@ -15,7 +15,7 @@ Feature: User can sign up and log in
 		And a user is created
 
 	Scenario: An existing user logs in.
-		Given an existing user
+		Given a user is created
 		Given I visit the home page
 		And I click the "Log in" button
 		Then a "login" modal should appear

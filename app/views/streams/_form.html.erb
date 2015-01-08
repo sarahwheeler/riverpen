@@ -11,6 +11,16 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= select_tag(options_for_select([ ['Tech', 1], ['Personal', 2] ])) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :visibility %><br />
+    <%# f.text_field :name, autofocus: true %>
+  </div>
+
   <div class="actions buttonholder">
     <%= f.submit %>
   </div>

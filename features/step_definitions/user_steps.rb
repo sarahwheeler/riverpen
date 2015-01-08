@@ -8,7 +8,8 @@ Then(/^a user is created$/) do
    @user.should_not eq nil
 end
 
-Given(/^I log in as an existing user$/) do
+Given(/^I am logged in/) do
+  visit root_path
   click_link('Log in')
   within find(".login-modal") do
     fill_in 'Login', with: "wonderwoman"
