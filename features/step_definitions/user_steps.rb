@@ -9,12 +9,20 @@ Then(/^a user is created$/) do
 end
 
 Given(/^I am logged in/) do
+  @user = FactoryGirl.create(:user)
+  @user.save
   visit root_path
   click_link('Log in')
   within find(".login-modal") do
-    fill_in 'Login', with: "wonderwoman"
-    fill_in 'pw-login', with: "grrlpower"
+    fill_in 'Login', with: @user.username
+    fill_in 'pw-login', with: @user.password
+    sleep 1
     page.find('#login-submit').click()
+    sleep 1
+  end
+  save_and_open_page
+  within find('p.alert') do
+    page.should have_text('Signed in successfully.')
   end
 end
 

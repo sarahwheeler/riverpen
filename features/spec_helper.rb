@@ -53,6 +53,7 @@ RSpec.configure do |config|
   def sign_in(user)
     visit new_user_session_path
     fill_in 'Email', with: user.email
+    fill_in 'Login', with: user.username
     fill_in 'Password', with: 'password'
     click_button 'Login'
   end
@@ -69,7 +70,7 @@ RSpec.configure do |config|
 	
 
   #to load a particular model:
-  #load Rails.root.join("app/models/user.rb")
+  load Rails.root.join("app/models/user.rb")
 
   #load whole app
   Dir[Rails.root + "app/**/*.rb"].each do |file|
