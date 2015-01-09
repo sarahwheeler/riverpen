@@ -13,12 +13,21 @@
 
   <div class="field">
     <%= f.label :category %><br />
-    <%= select_tag(options_for_select([ ['Tech', 1], ['Personal', 2] ])) %>
+    <%= select_tag(options_for_select([ ['', 0], 
+                                        ['Tech', 1],
+                                        ['Personal', 2],
+                                        ['Fandom', 3] 
+                                      ]), 2 ) %>
   </div>
 
   <div class="field">
     <%= f.label :visibility %><br />
     <%# f.text_field :name, autofocus: true %>
+
+    <%= radio_button_tag(:visibility, "Public") %>
+    <%= label_tag(:public, "Public") %>
+    <%= radio_button_tag(:visibility, "Private") %>
+    <%= label_tag(:private, "Private") %>
   </div>
 
   <div class="actions buttonholder">
