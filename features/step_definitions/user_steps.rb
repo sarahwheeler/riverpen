@@ -4,26 +4,29 @@ require_relative '../spec_helper'
 #   LOGGING IN
 
 Then(/^a user is created$/) do
-   @user = FactoryGirl.create(:user)
+   @user = User.new({
+             :email => "wonderwoman@themyscira.gov",
+             :username => "wonderwoman",
+             :password => "password",
+             :password_confirmation => "password"
+           })
+   @user.save!
    @user.should_not eq nil
 end
 
 Given(/^I am logged in/) do
-  @user = FactoryGirl.create(:user)
-  @user.save
-  visit root_path
-  click_link('Log in')
-  within find(".login-modal") do
-    fill_in 'Login', with: @user.username
-    fill_in 'pw-login', with: @user.password
-    sleep 1
-    page.find('#login-submit').click()
-    sleep 1
-  end
+  visit '/login'
+  @user = User.new({
+             :email => "wonderwoman@themyscira.gov",
+             :username => "wonderwoman",
+             :password => "password",
+             :password_confirmation => "password"
+           })
+   @user.save!
+  fill_in "user_login", :with => "wonderwoman"
   save_and_open_page
-  within find('p.alert') do
-    page.should have_text('Signed in successfully.')
-  end
+  fill_in "user_password", :with => "password"
+  click_button "Log in"
 end
 
 Then(/^Log out appears in the navbar$/) do  

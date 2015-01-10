@@ -31,6 +31,7 @@ group :test, :development do
   gem 'capybara'
   gem 'rspec'
   gem 'launchy'
+  gem 'spork'
   gem 'faker'
 	gem "poltergeist"
 	gem "selenium-webdriver"

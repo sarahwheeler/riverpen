@@ -1,11 +1,10 @@
 require 'factory_girl_rails'
 
-
 FactoryGirl.define do
-	factory :user do  |u|
-		sequence(:username) { |n| "wonderwoman#{n}" }
-    email { |u| "#{u.username}@themyscira.gov" }
+	factory :user do 
+		username "wonderwoman" 
+    email "wonderwoman@themyscira.gov" 
     password "password"
-    password_confirmation { |u| "#{u.password}" }
+    password_confirmation "password"
 	end
 end

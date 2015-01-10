@@ -6,7 +6,6 @@ Feature: User can create and view streams
 
 	Scenario: User creates a stream
 		Given I am logged in
-		Given show me the page
 		And I click the "+Stream" link
 		Then I should see the "Create a Stream" page
 		When I select "Tech" from "Category"

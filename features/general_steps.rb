@@ -130,6 +130,7 @@ end
 When(/^I select "(.*?)" from "(.*?)"$/) do |option, dropdown|
   case dropdown
   when match(/Category/)
+    save_and_open_page
     select option, from: dropdown
   when match(/Visibility/)
     select option, from: dropdown
