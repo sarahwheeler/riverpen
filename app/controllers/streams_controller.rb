@@ -12,11 +12,14 @@ class StreamsController < ApplicationController
 
   def show
     @stream = Stream.find(params[:id])
+    @user = User.find_by_id(@stream.user_id)
+    @posts = Post.find_by_stream_id(@stream.id)
     respond_with(@stream)
   end
 
   def new
-    @stream = Stream.new
+    @user = current_user
+    @stream = Stream.new(:user_id => @user.id)
     respond_with(@stream)
   end
 
