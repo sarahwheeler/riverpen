@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resources :profiles
   end
 
-  resources :posts
-  resources :streams
+  resources :streams do 
+    resources :posts
+  end
+  
   resources :home
 
   root :to => "home#index"
