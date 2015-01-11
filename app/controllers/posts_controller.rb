@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_current_stream, only: [:show, :edit, :new, :update, :create, :destroy]
+  before_action :set_user, only: [:show, :edit, :new, :update, :create, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -15,7 +16,6 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @post = Post.new(:user_id => @user.id, :stream_id => @stream.id)
     respond_with(@post)
   end
@@ -25,9 +25,14 @@ class PostsController < ApplicationController
 
   def create
     @post = @stream.posts.new(post_params)
-    if @post.save
-      respond_with(stream_post_path(@post), notice: 'Post sent downriver!')
-    else 
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to stream_post_path(@stream, @post), notice: 'Post was successfully sent downriver.' }
+        format.json { render action: 'show', status: :created, location: @post }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -49,6 +54,10 @@ class PostsController < ApplicationController
 
     def set_current_stream
       @stream = Stream.find(params[:stream_id])
+    end
+
+    def set_user
+      @user = User.find(current_user.id)
     end
 
     def post_params
