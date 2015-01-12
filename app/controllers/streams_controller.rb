@@ -1,6 +1,7 @@
 class StreamsController < ApplicationController
   before_action :authenticate_user!
 
+  before_action :set_user, only: [:new, :create, :show, :edit, :update, :destroy]
   before_action :set_stream, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -12,7 +13,7 @@ class StreamsController < ApplicationController
 
   def show
     @stream = Stream.find(params[:id])
-    @user = User.find_by_id(@stream.user_id)
+    @user = User.find(@stream.user_id)
     @posts = Post.find_by_stream_id(@stream.id)
     respond_with(@stream)
   end
@@ -47,7 +48,11 @@ class StreamsController < ApplicationController
       @stream = Stream.find(params[:id])
     end
 
+    def set_user
+      @user = User.find(params[:user_id])
+    end
+
     def stream_params
-      params[:stream]
+      params.require(:stream).permit(:id, :user_id, :category, :visibility)
     end
 end

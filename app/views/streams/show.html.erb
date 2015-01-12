@@ -1,19 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_stream_path(@stream) %> |
-<%= link_to 'Back', streams_path %>
+<div class="col-md-4">
+	<div id="stream-panel">
+		<h3> <%= @user.username + "'s" + @stream.category + " Stream" %> </h3>
 
-<h3> Category </h3>
-<%= @stream.category %>
+		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
+		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
+	</div>
+</div>
 
-<h3> Posts </h3>
+<div class="col-md-8">
+	<% @stream.posts.each do |post| %>
+	  <div class="post-wrapper">
+	    <h2><%= post.title %></h2>
+	     <p><%= post.content %></p><br>
+	     <p><%= "Posted " + time_ago_in_words(post.created_at) + " ago" %></p>
+	  
+	    <%= link_to 'Show', stream_post_path(@stream, post) %> | 
+	    <%= link_to 'Edit', edit_stream_post_path(@stream, post) %> | 
+	    <%= link_to 'Destroy', [@stream, post], method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+	  </div>
+	<% end %>
+</div>
 
-<%= link_to "New Post", new_stream_post_path(@stream.id) %>
-
-<%# @posts.each do |post| %>
 
 
 
-<%# end %>
 
 
