@@ -27,14 +27,15 @@ group :test, :development do
 	gem 'rspec-expectations'
 	gem 'database_cleaner'
 	gem 'factory_girl_rails', :require => false
-	gem "better_errors"
+	gem 'better_errors'
+	gem 'binding_of_caller'
   gem 'capybara'
   gem 'rspec'
   gem 'launchy'
   gem 'spork'
   gem 'faker'
-	gem "poltergeist"
-	gem "selenium-webdriver"
+	gem 'poltergeist'
+	gem 'selenium-webdriver'
   gem 'simplecov'
 	gem 'spring'		# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
@@ -42,7 +43,7 @@ end
 # // EVERYTHING ELSE //
 	gem 'turbolinks'				# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 	gem 'sdoc', '~> 0.4.0', group: :doc		# bundle exec rake doc:rails generates the API under doc/api.
-	gem "awesome_print"
+	gem 'awesome_print'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
