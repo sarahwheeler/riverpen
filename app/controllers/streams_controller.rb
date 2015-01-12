@@ -47,6 +47,6 @@ class StreamsController < ApplicationController
       @stream = Stream.find(params[:id])
     end
     def stream_params
-      params.require(:stream).permit(:id, :user_id, :category, :visibility)
+      params.require(:stream).permit(:id, :user_id, :category, :public)
     end
 end
