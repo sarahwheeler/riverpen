@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-4">
+<div class="col-md-2">
 	<div id="stream-panel">
-		<h3> <%= @user.username + "'s" + @stream.category + " Stream" %> </h3>
+		<h3><%= @user.username + "'s Stream" %> </h3>
 
 		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
 	</div>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-10">
 	<% @stream.posts.each do |post| %>
 	  <div class="post-wrapper">
 	    <h2><%= post.title %></h2>

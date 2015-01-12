@@ -14,10 +14,12 @@
   <div class="field">
     <%= f.label :category %><br />
     <%= select_tag(options_for_select([ ['', 0], 
-                                        ['Tech', 1],
-                                        ['Personal', 2],
-                                        ['Fandom', 3] 
-                                      ]), 2 ) %>
+                                        ['Fandom', :fandom], 
+                                        ['Fiction', :fiction],
+                                        ['Hobbies', :hobbies],
+                                        ['Personal', :personal],
+                                        ['Professional', :tech]
+                                      ]), :fandom ) %>
   </div>
 
   <div class="field">
@@ -29,6 +31,8 @@
     <%= radio_button_tag(:visibility, "Private") %>
     <%= label_tag(:private, "Private") %>
   </div>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
 
   <div class="actions buttonholder">
     <%= f.submit %>
