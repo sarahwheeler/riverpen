@@ -4,6 +4,7 @@ class Stream < ActiveRecord::Base
 
 	# OWNERSHIP
 	has_many :posts
+	has_many :subcategories
 
 	validates :user_id, presence: true
 	validates :category, presence: true
