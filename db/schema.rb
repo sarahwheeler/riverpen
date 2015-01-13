@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20150112034037) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "category"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.boolean  "public"
   end
 

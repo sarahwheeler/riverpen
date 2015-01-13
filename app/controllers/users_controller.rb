@@ -31,8 +31,7 @@ class UsersController < ApplicationController
       redirect_to streams_path
     else
       render "new"
-    end
-    
+    end    
   end
 
   def update

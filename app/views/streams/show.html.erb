@@ -3,6 +3,7 @@
 <div class="col-md-2">
 	<div id="stream-panel">
 		<h3><%= @user.username + "'s Stream" %> </h3>
+		<h4>Category <%= @stream.category if !(@stream.category == nil) %></h4>
 
 		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>

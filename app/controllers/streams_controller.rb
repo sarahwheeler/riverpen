@@ -18,18 +18,23 @@ class StreamsController < ApplicationController
   end
 
   def new
+    @stream = Stream.new
     @user = current_user
-    @stream = Stream.new(:user_id => @user.id)
     respond_with(@stream)
   end
 
   def edit
+    @stream = Stream.find(params[:id])
   end
 
   def create
     @stream = Stream.new(stream_params)
     @stream.save
-    respond_with(@stream)
+    if @stream.save
+      redirect_to stream_path(@stream)
+    else
+      render "new"
+    end
   end
 
   def update
@@ -47,6 +52,6 @@ class StreamsController < ApplicationController
       @stream = Stream.find(params[:id])
     end
     def stream_params
-      params.require(:stream).permit(:id, :user_id, :category, :public)
+      params.require(:stream).permit([:category, :public, :user_id])
     end
 end
