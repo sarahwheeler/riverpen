@@ -52,6 +52,19 @@ class PostsController < ApplicationController
     respond_with(@post)
   end
 
+  def streamless_create
+    @post = Post.new(post_params)
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to stream_post_path(@stream, @post), notice: 'Post was successfully sent downriver.' }
+        format.json { render action: 'show', status: :created, location: @post }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     def set_post
       @post = Post.find(params[:id])

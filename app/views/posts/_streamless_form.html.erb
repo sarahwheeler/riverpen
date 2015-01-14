@@ -1,10 +1,4 @@
-
-<h3> Select a stream: </h3>
-
-
-<hr>
-
-<%= form_for([@stream, @stream.posts.new], :html => {:multipart => true}) do |f| %>
+<%= form_for @post, url: {action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -16,6 +10,15 @@
       </ul>
     </div>
   <% end %>
+
+<h3> Select a stream: </h3>
+
+<%# f.select(:category, options_for_select([   my_streams(@user)  ])) %>
+
+<%= select(:stream_id, :user_id, Stream.all.collect {|s| [ s.category.capitalize, s.id ] }) %>
+<hr>
+
+
 
   <div class="field">
     <%= f.label :title %><br />
