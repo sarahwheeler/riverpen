@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   get 'users/:id/edit_profile' => 'profiles#edit', as: :edit_profile
   patch 'users/:id/edit_profile' => 'profiles#update'
 
+
+  get '/post' => 'posts#post', as: :post
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

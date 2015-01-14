@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_current_stream, only: [:show, :edit, :new, :update, :create, :destroy]
-  before_action :set_user, only: [:show, :edit, :new, :update, :create, :destroy]
+  before_action :set_user, only: [:show, :edit, :new, :update, :create, :destroy, :post]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -44,6 +44,11 @@ class PostsController < ApplicationController
   def destroy
     @post = @stream.posts.find(params[:id])
     @post.destroy
+    respond_with(@post)
+  end
+
+  def post
+    @post = Post.new(:user_id => @user.id)
     respond_with(@post)
   end
 
