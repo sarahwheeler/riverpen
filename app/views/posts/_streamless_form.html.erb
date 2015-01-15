@@ -13,12 +13,9 @@
 
 <h3> Select a stream: </h3>
 
-<%# f.select(:category, options_for_select([   my_streams(@user)  ])) %>
+<%= select(:stream_id, @post.stream_id, Stream.all.collect {|s| [ s.category.capitalize, s.id ] }, :id => "stream-select") %>
 
-<%= select(:stream_id, :user_id, Stream.all.collect {|s| [ s.category.capitalize, s.id ] }) %>
 <hr>
-
-
 
   <div class="field">
     <%= f.label :title %><br />
@@ -29,7 +26,7 @@
     <%= f.text_area :content %>
   </div>
 
-    <%= f.hidden_field :user_id, :value => @user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
     <%= f.submit %>

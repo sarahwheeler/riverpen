@@ -56,10 +56,10 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to stream_post_path(@stream, @post), notice: 'Post was successfully sent downriver.' }
+        format.html { redirect_to post_path(@post), notice: 'Post was successfully sent downriver.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'post' }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
