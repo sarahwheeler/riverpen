@@ -9,4 +9,10 @@
 * CSS throughout (desparately)
 * Set up automatic "read more..." cuts for image insertions
 * Avatars for users
+* ADA compliance
 * More test coverage
+* Tagging system
+* Search public articles, usernames, tags
+* Set up Streamline that contains most recent posts from all the streams you follow
+* Random stream button (or secret keypress)
+* Set up subcategories
