@@ -13,8 +13,7 @@
 
 <h3> Select a stream: </h3>
 
-<%= select(:stream_id, @post.stream_id, Stream.all.collect {|s| [ s.category.capitalize, s.id ] }, :id => "stream-select") %>
-
+<%= f.select(:stream_id, @stream_options) %>
 <hr>
 
   <div class="field">

@@ -44,12 +44,12 @@ class PostsController < ApplicationController
   def destroy
     @post = @stream.posts.find(params[:id])
     @post.destroy
-    respond_with(@post)
+    respond_with(@stream)
   end
 
   def post
-    @post = Post.new(:user_id => @user.id)
-    respond_with(@post)
+    @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
+    @post = Post.new()
   end
 
   def streamless_create
