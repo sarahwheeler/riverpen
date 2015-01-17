@@ -1,5 +1,5 @@
-* Fix Public/Private stream radio buttons
 * Edit post page should contain existing post info
+* Actual home page
 * Add HTML text formatting options to post field
 * Add background photo for each stream for user
 * Typography improvements
@@ -17,3 +17,7 @@
 * Set up Streamline that contains most recent posts from all the streams you follow
 * Random stream button (or secret keypress)
 * Set up subcategories
+
+
+Done:
+* Fix Public/Private stream radio buttons [UPDATE: made 'em checkboxes]

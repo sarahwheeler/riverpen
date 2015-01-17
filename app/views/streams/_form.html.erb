@@ -25,11 +25,8 @@
   </div>
 
   <div class="field">
-    <%= label :public, "Visibility" %><br />
-    <%= f.radio_button :public, true %>
-    <%= label_tag(:public, "Public") %>
-    <%= f.radio_button :public, false %>
-    <%= label_tag(:public, "Private") %>
+    <%= f.label "Public?" %> <br />
+    <%= f.check_box :public %> <br />
   </div>
 
 
