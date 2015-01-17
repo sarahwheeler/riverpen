@@ -1,7 +1,8 @@
 //  ** TYPOGRAPHY  **  //
 
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
-@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Archivo+Black);
 
 
 //  ** COLOR CODES **  //
@@ -17,8 +18,46 @@ $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
 
+
+//  ** GENERAL HEADLINES ** //
+
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Fjalla One', sans-serif;
-	margin-bottom: 15px;
+	font-family: 'Archivo Black', sans-serif;
+}
+
+h2, h3, h4 {
+	margin: 1.25em;
+}
+
+
+// ** STREAM DISPLAYS ** //
+
+#stream-user-title {
+	font-family: 'Archivo Black', sans-serif;
+	text-align: left;
+	font-size: 4em;
+	margin-bottom: 1em;
+}
+
+sup {
+	font-family: 'Archivo Black', sans-serif;
 	text-align: center;
+	font-size: 0.5em;
+}
+
+
+// ** POST DISPLAYS ** //
+
+.post-headline {
+	margin: 1.25em 0 1em -1em;
+	font-size: 3.5em;
+}
+
+p {
+	font-family: 'Crimson Text';
+	font-weight: 400;
+	font-size: 1.6em;
+	line-height: 1.4em;
+	letter-spacing: -0.6px;
+	text-align: justify;
 }

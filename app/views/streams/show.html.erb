@@ -1,21 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-2">
+<div class="col-md-4">
 	<div id="stream-panel">
-		<h3><%= @user.username + "'s Stream" %> </h3>
-		<h4>Category <%= @stream.category if !(@stream.category == nil) %></h4>
+		<div id="stream-user-title"><%= "#{@user.username}" %><sup>:<%= "#{@stream.category}" %></sup></div>
 
 		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
 	</div>
 </div>
-
-<div class="col-md-10">
+<div class="col-md-2"></div>
+<div class="col-md-6">
 	<% @stream.posts.each do |post| %>
 	  <div class="post-wrapper">
-	    <h2><%= post.title %></h2>
+	    <h2 class="post-headline"><%= post.title %></h2>
 	     <p><%= post.content %></p><br>
-	     <p><%= "Posted " + time_ago_in_words(post.created_at) + " ago" %></p>
+	     <p><%= "Penned " + time_ago_in_words(post.created_at) + " ago" %></p>
 	  
 	    <%= link_to 'Show', stream_post_path(@stream, post) %> | 
 	    <%= link_to 'Edit', edit_stream_post_path(@stream, post) %> | 
