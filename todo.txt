@@ -1,4 +1,5 @@
 * Fix Public/Private stream radio buttons
+* Edit post page should contain existing post info
 * Add HTML text formatting options to post field
 * Add background photo for each stream for user
 * Typography improvements
