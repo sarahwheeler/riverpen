@@ -30,6 +30,53 @@ h2, h3, h4 {
 }
 
 
+// ** NAV BAR ** //
+
+#nav-logo {
+	margin-left: 25px;
+	margin-right: 100px;
+	color: white;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1.65em; 
+	vertical-align: -webkit-baseline-middle;
+	text-decoration: none;
+	&:hover { 
+		text-decoration: none; 
+		color: $darkblue;
+		background-color: inherit;
+	}
+}
+
+#nav-menu {
+	list-style: none;
+	float: right;
+	width: 60%;
+	padding-top: 10px;
+	margin-right: -18%;
+	vertical-align: middle;
+	vertical-align: -webkit-baseline-middle;
+}
+
+li.nav-link {
+	display: inline;
+	margin-right: 15px;
+	color: white;
+	font-family: 'News Cycle', sans-serif !important;
+	font-size: 1.05em;
+	font-weight: 400;	
+	a {
+		color: white;
+		text-decoration: none;
+		padding: 0 10px;
+		font-size: 1.2em;
+	}
+	a:hover {
+		color: $wine;
+		background-color: inherit;
+	}
+}
+
+
 // ** STREAM DISPLAYS ** //
 
 #stream-user-title {
@@ -44,7 +91,6 @@ sup {
 	text-align: center;
 	font-size: 0.5em;
 }
-
 
 // ** POST DISPLAYS ** //
 
