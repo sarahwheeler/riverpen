@@ -2,7 +2,7 @@
 
 <div class="col-md-4">
 	<div id="stream-panel">
-		<div id="stream-user-title"><%= "#{@user.username}" %><sup>:<%= "#{@stream.category}" %></sup></div>
+		<div id="stream-user-title"><%= link_to "#{@user.username}", profile_path(@user), id: "stream-profile-link" %><sup>:<%= "#{@stream.category}" %></sup></div>
 
 		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
