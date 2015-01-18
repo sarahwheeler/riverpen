@@ -13,7 +13,7 @@
 	<% @stream.posts.each do |post| %>
 	  <div class="post-wrapper">
 	    <h2 class="post-headline"><%= post.title %></h2>
-	     <p><%= post.content %></p><br>
+	     <p><%= simple_format h post.content %></p><br>
 	     <p><%= "Penned " + time_ago_in_words(post.created_at) + " ago" %></p>
 	  
 	    <%= link_to 'Show', stream_post_path(@stream, post) %> | 
