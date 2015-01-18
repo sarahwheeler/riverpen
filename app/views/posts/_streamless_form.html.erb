@@ -1,4 +1,8 @@
-<%= form_for @post, url: {action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
+
+
+<h3> Select a stream: </h3>
+<% if !@stream_options.nil? %>
+  <%= form_for @post, as: @post, url: {controller: "posts", action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,12 +14,8 @@
       </ul>
     </div>
   <% end %>
-
-<h3> Select a stream: </h3>
-
-<%= f.select(:stream_id, @stream_options) %>
-<hr>
-
+  <%= f.select(:stream_id, @stream_options) %>
+  <hr> 
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title, autofocus: true %>
@@ -25,9 +25,16 @@
     <%= f.text_area :content %>
   </div>
 
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  <% end %>
+
+<% else %>
+
+  <%= link_to "Create a Stream First!", new_stream_path %> 
+
 <% end %>

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new(:user_id => @user.id, :stream_id => @stream.id)
+    @post = Post.new
     respond_with(@post)
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 
   def post
     @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
-    @post = Post.new()
+    @post = Post.new
   end
 
   def streamless_create
