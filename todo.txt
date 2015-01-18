@@ -1,4 +1,3 @@
-* Edit post page should contain existing post info
 * Actual home page
 * Add HTML text formatting options to post field
 * Add background photo for each stream for user
@@ -11,6 +10,7 @@
 * Avatars for users
 * ADA compliance
 * More test coverage
+* Change stream & post routes to username/stream/post/id
 * Tagging system
 * Search public articles, usernames, tags
 * Set up Streamline that contains most recent posts from all the streams you follow
@@ -21,3 +21,4 @@
 Done:
 * Fix Public/Private stream radio buttons [UPDATE: made 'em checkboxes]
 * Make streamless Post a modal
+* Edit post page should contain existing post info
