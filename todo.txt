@@ -2,7 +2,7 @@
 * Add HTML text formatting options to post field
 * Add background photo for each stream for user
 * Typography improvements
-* Add comment/reply system
+* Add comment/reply system   -- in progress --
 * Set up private/public view logic 
 * Follow system for individual streams
 * Set up the actual Streamline
