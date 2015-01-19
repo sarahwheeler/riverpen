@@ -4,7 +4,7 @@
 	<div id="stream-panel">
 		<div id="stream-user-title"><%= link_to "#{@user.username}", profile_path(@user), id: "stream-profile-link" %><sup>:<%= "#{@stream.category}" %></sup></div>
 
-		<%= link_to "New Post", new_stream_post_path(@stream.id) %><br>
+		<%= link_to "New Post", new_post_path(:stream_id => @stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
 	</div>
 </div>
@@ -16,14 +16,16 @@
 	     <p><%= simple_format h post.content %></p><br>
 	     <p><%= "Penned " + time_ago_in_words(post.created_at) + " ago" %></p>
 	  
-	    <%= link_to 'Show', stream_post_path(@stream, post) %> | 
-	    <%= link_to 'Edit', edit_stream_post_path(@stream, post) %> | 
-	    <%= link_to 'Destroy', [@stream, post], method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+	    <%= link_to 'Show', post_path(@stream, post) %> | 
+	    <%= link_to 'Edit', edit_post_path(@stream, post) %> | 
+	    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
+	    <div class= "post-comments">
+	    	<%# link_to 'Reply', new_stream_post_comment(@stream.id, post.id) %> | 
+	    	<%# link_to 'Show comments',  stream_post_comments( @stream, post) %>
+	    </div>
 	  </div>
 	<% end %>
 </div>
-
-
 
 
 

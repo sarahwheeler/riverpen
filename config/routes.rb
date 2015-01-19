@@ -1,20 +1,18 @@
 Rails.application.routes.draw do
   
-  resources :comments
-
+  root :to => "home#index"
   devise_for :users
 
   resources :users do
     resources :profiles
   end
 
-  resources :streams do 
-    resources :posts
+  resources :posts do
+    resources :comments
   end
-  
-  resources :home
 
-  root :to => "home#index"
+  resources :home
+  resources :streams
 
   devise_scope :user do
    get "signup", to: "devise/registrations#new"
@@ -28,8 +26,8 @@ Rails.application.routes.draw do
   patch 'users/:id/edit_profile' => 'profiles#update'
 
 
-  get '/post' => 'posts#post', as: :post
-  post '/post' => 'posts#streamless_create'
+  get '/float_post' => 'posts#post', as: :float_post
+  post '/float_post' => 'posts#streamless_create'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

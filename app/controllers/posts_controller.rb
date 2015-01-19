@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_current_stream, only: [:show, :edit, :new, :update, :create, :destroy]
+  before_action :set_current_stream, only: [:new]
   before_action :set_user, only: [:show, :edit, :new, :update, :create, :destroy, :post]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -25,10 +25,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @stream.posts.new(post_params)
+    @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to stream_post_path(@stream, @post), notice: 'Post was successfully sent downriver.' }
+        format.html { redirect_to post_path(@post), notice: 'Post was successfully sent downriver.' }
         format.json { render action: 'show', status: :created, location: @post }
       else
         format.html { render action: 'new' }
@@ -43,12 +43,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = @stream.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    @stream = Stream.find(@post.stream_id)
     @post.destroy
-    respond_with(@stream)
+    redirect_to stream_path(@stream.id) 
   end
 
-  def post
+  def nav_post
     @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
     @post = Post.new
   end
