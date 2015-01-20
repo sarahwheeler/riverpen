@@ -38,7 +38,8 @@ Then(/^I click the "(.*?)" button$/) do |button_name|
   case button_name
   # Nav Bar
   when match(/Sign Up/)
-  	page.find('#signup-submit').click()
+    puts "MADE IT HERE"
+  	page.find('.signup-submit').trigger('click')
   when match(/Log in/)
     click_link('Log in')
   when match(/Login/)
@@ -91,37 +92,39 @@ end
 
 #   BASIC FORMS
 
-When(/^I enter "(.*?)" for "(.*?)"$/) do |value, field_name|
+When(/^I fill in "(.*?)"$/) do |field_name|
+  @existing_user = FactoryGirl.create(:user)
   case field_name
   # Sign Up Modal
   when match(/Your Email Address/)
-    fill_in 'email-signup', with: value, :match => :prefer_exact
+    fill_in 'email-signup', with: @existing_user.email, :match => :prefer_exact
   when match(/Pick a Username:/)
     within('.signup-modal') do
-      fill_in 'username-signup', with: value
+      fill_in 'username-signup', with: @existing_user.username
     end
   when match(/Signup Password/)
-  	fill_in 'pw-signup', with: value, :match => :prefer_exact
+  	fill_in 'pw-signup', with: @existing_user.password, :match => :prefer_exact
   when match(/Confirm Password/)
-    fill_in "Confirm Password", with: value
+    fill_in "user_password_confirmation", with: @user.password
   # Login Modal
   when match(/Login/)
+    @user_b = FactoryGirl.create(:user)
     within('.login-modal') do 
-      fill_in 'user_login', with: value, :match => :prefer_exact
+      fill_in 'user_login', with: @user_b.username, :match => :prefer_exact
     end
   when match(/Password/)
-    fill_in 'pw-login', with: value, :match => :prefer_exact
+    fill_in 'pw-login', with: @user_b.password, :match => :prefer_exact
   # Edit Profile
   when match(/Name/)
-    fill_in 'Name', with: value
+    fill_in 'Name', with: 'Princess Diana'
   when match(/Age/)
     select('23', from: 'profile-age-field')
   when match(/Location/)
-    fill_in 'Location', with: value
+    fill_in 'Location', with: 'Themyscira, Amazon'
   when match(/Website/)
-    fill_in 'Website', with: value
+    fill_in 'Website', with: 'http://www.dccomics.com/characters/wonder-woman'
   when match(/Bio/)
-    fill_in 'Bio', with: value
+    fill_in 'Bio', with: 'Using jewelry as deadly weapons since 1941.'
   else 
   	raise StandardError, "No field name #{field_name}"
   end

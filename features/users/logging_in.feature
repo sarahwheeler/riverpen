@@ -7,10 +7,10 @@ Feature: User can sign up and log in
 		Given I visit the home page
 		And I click the "Sign Up!" link
 		Then a "sign up" modal should appear
-		When I enter "wonderwoman@themyscira.gov" for "Your Email Address"
-		And I enter "wonderwoman" for "Pick a Username:"
-		And I enter "grrlpower" for "Signup Password"
-		And I enter "grrlpower" for "Confirm Password"
+		When I fill in "Your Email Address"
+		And I fill in "Pick a Username:"
+		And I fill in "Signup Password"
+		And I fill in "Confirm Password"
 		Then I click the "Sign Up" button
 		And a user is created
 
@@ -19,8 +19,8 @@ Feature: User can sign up and log in
 		Given I visit the home page
 		And I click the "Log in" button
 		Then a "login" modal should appear
-		When I enter "wonderwoman" for "Login"
-		And I enter "grrlpower" for "Password"
+		When I fill in "Login"
+		And I fill in "Password"
 		Then I click the "Login" button
 		When I wait "5" seconds
 		And Log out appears in the navbar

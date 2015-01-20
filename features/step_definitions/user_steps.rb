@@ -4,29 +4,23 @@ require_relative '../spec_helper'
 #   LOGGING IN
 
 Then(/^a user is created$/) do
-   @user = User.new({
-             :email => "wonderwoman@themyscira.gov",
-             :username => "wonderwoman",
-             :password => "password",
-             :password_confirmation => "password"
-           })
+   @user = FactoryGirl.create(:user)
    @user.save!
    @user.should_not eq nil
 end
 
 Given(/^I am logged in/) do
-  visit '/login'
-  @user = User.new({
-             :email => "wonderwoman@themyscira.gov",
-             :username => "wonderwoman",
-             :password => "password",
-             :password_confirmation => "password"
-           })
-   @user.save!
-  fill_in "user_login", :with => "wonderwoman"
-  save_and_open_page
-  fill_in "user_password", :with => "password"
-  click_button "Log in"
+  steps %{
+    Given I visit the home page             
+    And I click the "Sign Up!" link                                   
+    Then a "sign up" modal should appear                              
+    When I fill in "Your Email Address" 
+    And I fill in "Pick a Username:"      
+    And I fill in "Signup Password"   
+    And I fill in "Confirm Password"      
+    Then I click the "Sign Up" button                               
+    And a user is created
+  }
 end
 
 Then(/^Log out appears in the navbar$/) do  

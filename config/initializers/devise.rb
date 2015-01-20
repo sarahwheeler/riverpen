@@ -262,4 +262,6 @@ Devise.setup do |config|
   config.authentication_keys = [ :login ]
 
   config.sign_out_via = Rails.env.test? ? :get : :delete
+
+  config.secret_key = '6cd0e4a20e3ec74ab729f32a6c3e48a1e4e3ccf18302927f3ff7ce3f7094edf4828f62e4fa0d132c87744a752e1e474c497fca04915e4babe9529f5c9079f659'
 end

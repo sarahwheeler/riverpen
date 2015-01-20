@@ -7,10 +7,10 @@ Feature: User has a profile
 		Given I visit the home page
 		And I click the "Sign Up!" link
 		Then a "sign up" modal should appear
-		When I enter "wonderwoman@themyscira.gov" for "Your Email Address"
-		And I enter "wonderwoman" for "Pick a Username:"
-		And I enter "grrlpower" for "Signup Password"
-		And I enter "grrlpower" for "Confirm Password"
+		When I fill in "Your Email Address"
+		And I fill in "Pick a Username"
+		And I fill in "Signup Password"
+		And I fill in "Confirm Password"
 		Then I click the "Sign Up" button
 		And a user profile should be created
 
@@ -20,11 +20,11 @@ Feature: User has a profile
 		Then I should see the "Profile" page
 		When I click the "Edit" button
 		Then I should see the "Edit Profile" page
-		And I enter "Princess Diana" for "Name"
-		And I enter "23" for "Age"
-		And I enter "Themyscira, Amazon" for "Location"
-		And I enter "http://www.dccomics.com/characters/wonder-woman" for "Website"
-		And I enter "Using jewelry as deadly weapons since 1941." for "Bio"
+		And I fill in "Name"
+		And I fill in "Age"
+		And I fill in "Location"
+		And I fill in "Website"
+		And I fill in "Bio"
 		And I click the "Update Profile" button
 		Then I should see the "Profile" page
 		And I see "Princess Diana" as my profile "name"
