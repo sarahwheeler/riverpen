@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :new, :update, :create, :destroy]
 
   respond_to :html
 
@@ -9,7 +10,6 @@ class CommentsController < ApplicationController
   end
 
   def show
-    respond_with(@comment)
   end
 
   def new
@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    respond_with(@comment)
+    redirect_to post_comment_path(@post, @comment)
   end
 
   def update
@@ -37,6 +37,10 @@ class CommentsController < ApplicationController
   end
 
   private
+    def set_post
+      @post = Post.find(params[:post_id])
+    end
+
     def set_comment
       @comment = Comment.find(params[:id])
     end

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with(@post)
+    @post = Post.find(params[:id])
   end
 
   def new
