@@ -8,4 +8,12 @@ class Post < ActiveRecord::Base
 
 	validates :user_id, :presence => true
 	validates :stream_id, :presence => true
+
+
+  def owner(id)
+  	@owner = User.find(id)
+  	return  @owner
+  end
+  
+
 end
