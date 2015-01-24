@@ -2,8 +2,16 @@
 // All this logic will automatically be available in application.js.
 
 $(document).ready(function() {
-	$('.post-reply').on('click', function(){
+
+	// Comment Toggles
+	$('.view-post-reply').on('click', function(){
 		console.log("THIS SHIT RIGHT HERE IS BEING CALLED");
-		$('.view-post-reply').show();
+		$('.post-reply').toggle();
 	});
+
+	$('.view-post-comments').on('click', function(){
+		console.log("THIS VIEW ALL IS BEING CALLED");
+		$('.post-comments').toggle();
+	});
+
 });
