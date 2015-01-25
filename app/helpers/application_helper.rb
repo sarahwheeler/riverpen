@@ -13,7 +13,9 @@ module ApplicationHelper
   end
 
   def user_stream_options
-  	Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
+    unless current_user.nil?
+  	 Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
+    end
   end
 
 end
