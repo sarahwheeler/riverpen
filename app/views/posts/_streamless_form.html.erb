@@ -1,20 +1,10 @@
 
 
-<h3> Select a stream: </h3>
-<% if !@stream_options.nil? %>
-  <%= form_for @post, as: @post, url: {controller: "posts", action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+<h4> Select a stream: </h4>
+<% unless user_stream_options == nil %>
+  <%= form_for Post.new, as: @post, url: {controller: "posts", action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
 
-      <ul>
-      <% @post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= f.select(:stream_id, @stream_options) %>
+  <%= f.select(:stream_id, user_stream_options) %>
   <hr> 
   <div class="field">
     <%= f.label :title %><br />

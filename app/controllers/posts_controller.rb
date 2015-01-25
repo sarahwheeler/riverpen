@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     redirect_to stream_path(@stream.id) 
   end
 
-  def nav_post
+  def float_post
     @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
     @post = Post.new
   end

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   patch 'users/:id/edit_profile' => 'profiles#update'
 
 
-  get '/float_post' => 'posts#post', as: :float_post
+  get '/float_post' => 'posts#float_post', as: :float_post
   post '/float_post' => 'posts#streamless_create'
   
   # The priority is based upon order of creation: first created -> highest priority.
