@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_current_stream, only: [:new]
-  before_action :set_user, only: [:show, :edit, :new, :update, :create, :destroy, :post]
+  before_action :set_user, only: [:new, :create, :destroy, :post]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
