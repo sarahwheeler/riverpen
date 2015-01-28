@@ -4,14 +4,14 @@
 $(document).ready(function() {
 
 	// Comment Toggles
-	$('.view-post-reply').on('click', function(){
+	$('.view-post-reply').unbind('click').on('click', function(){
 		console.log("THIS SHIT RIGHT HERE IS BEING CALLED");
-		$('.post-reply').toggle();
+		$('.post-reply').slideToggle();
 	});
 
-	$('.view-post-comments').on('click', function(){
+	$('.view-post-comments').unbind('click').on('click', function(){
 		console.log("THIS VIEW ALL IS BEING CALLED");
-		$('.post-comments').toggle();
+		$('.post-comments').slideToggle();
 	});
 
 });
