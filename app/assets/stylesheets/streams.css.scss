@@ -9,3 +9,18 @@
 .post-comments {
 	display: none;
 }
+
+.post-footer {
+	display: inline-block;
+}
+
+.post-footer ul li {
+	display: inline;
+	line-decoration: none;
+	padding: 0px 8px;
+}
+
+.view-post-reply, .view-post-comments {
+	display: inline;
+	padding-left:25px;
+}
