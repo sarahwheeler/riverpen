@@ -58,7 +58,7 @@
 	    	<% if post.comments %>	
 	    		<% post.comments.each do |comment| %>
 	    			<%= comment.content %>
-	    			<div class="comment-byline">By <%= comment.user_id %> |
+	    			<div class="comment-byline">By <%= comment.user_id %> | <%= link_to 'Delete', [post, comment], confirm: "Are you sure you want to delete this plant?", :method => :delete %>
 	    			 	<%# time_ago_in_words(comment.created_at) + " ago" %> 
 	    			</div>
 	    			<hr> 
