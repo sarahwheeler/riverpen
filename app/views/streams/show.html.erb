@@ -3,7 +3,7 @@
 <div class="col-md-4">
 	<div id="stream-panel">
 		<div id="stream-user-title"><%= link_to "#{@user.username}", profile_path(@user), id: "stream-profile-link" %><sup>:<%= "#{@stream.category}" %></sup></div>
-
+		<p><%= @stream.posts.count %> posts</p>
 		<%= link_to "New Post", new_post_path(:stream_id => @stream.id) %><br>
 		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
 	</div>
