@@ -5,4 +5,11 @@ module HomeHelper
 		backgrounds.sample
 	end
 
+	def email_placeholder
+		writers = ["VirginiaWoolf@wordsmith.com", "ToniMorrison@wordsmith.com",
+				"MayaAngelou@wordsmith.com", "MargaretAtwood@wordsmith.com", 
+				"AudreLorde@wordsmith.com"]
+		writers.sample
+	end
+
 end

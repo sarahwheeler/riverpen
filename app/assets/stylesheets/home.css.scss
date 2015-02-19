@@ -15,3 +15,33 @@ $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
 
+// INDEX //
+
+.jumbotron {
+	position: absolute;
+	top: 6%;
+	right: 0;
+	background-color: white;
+	border-radius: 8px;
+	margin: 6% -10% 0 0;
+	width: 54%;
+	height: 350px;
+	opacity: 0.65;
+}
+.main-banner {
+	position: absolute;
+	top: 25%;
+	right: -5%;
+	width: 44%;
+	height: 350px;
+}
+.beta-signup {
+	display: inline-flex;
+}
+.field {
+	border-radius: 7px;
+	padding: 3px 10px;
+	width: 30%;
+	min-width: 250px;
+	margin: 0 0 0 20px;
+}
