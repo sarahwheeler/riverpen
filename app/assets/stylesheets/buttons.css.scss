@@ -47,6 +47,15 @@ input[type="submit"]:hover {
 	border-radius: 20px;
 }
 
+.follow-stream {
+	display: block;
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 1.25em;
+	background-color: $lime;
+	border-radius: 10px;
+	padding: 10px 15px;
+}
+
 .comment-submit {
 
 }
