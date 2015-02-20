@@ -3,7 +3,7 @@
 @import url(http://fonts.googleapis.com/css?family=Fjalla+One);
 @import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Archivo+Black);
-
+@import url(http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps);
 
 //  ** COLOR CODES **  //
 
@@ -33,12 +33,11 @@ h2, h3, h4 {
 // ** NAV BAR ** //
 
 #nav-logo {
-	margin-left: 25px;
-	margin-right: 100px;
+	margin: 3px 100px 0 25px;
 	color: white;
-	font-family: 'Fjalla One', sans-serif;
-	font-size: 1.65em; 
-	vertical-align: -webkit-baseline-middle;
+	font-family: 'Bilbo Swash Caps', script;
+	font-size: 1.8em; 
+	vertical-align: inherit;
 	text-decoration: none;
 	&:hover { 
 		text-decoration: none; 
@@ -77,9 +76,31 @@ li.nav-link {
 }
 
 //  ** HOME PAGE  **  //
-.welcome {
-	font-size: 2em;
-	
+h1.welcome {
+	font-family: 'Crimson Text', serif;
+	font-size: 2em;	
+	color: #005959;
+}
+h2.welcome-tag {
+	font-family: 'Crimson Text', serif;
+	color: #401E00;
+	padding-left: 14%;
+
+}
+.banner-name {
+	font-family: 'Bilbo Swash Caps', script;
+	font-size: 3.35em;
+	color: #af9c3c;
+	float: right;
+	margin: 8% 40% 7% 15%;
+}
+p.jumbo-description, p.beta-label {
+	font-family: 'Fjalla One', sans-serif;
+	color: #005959;
+}
+p.beta-label {
+	font-size: 1.35em;
+	padding-top: 0.9%;
 }
 
 // ** STREAM DISPLAYS ** //
