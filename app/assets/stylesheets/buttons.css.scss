@@ -8,15 +8,17 @@
 //  ** COLOR CODES **  //
 
 $teal: #52B4AF; 
-$darkteal: #063E53;
+$darkTeal: #063E53;
 $blue: #0F9FB4;
-$darkblue: #293E6A;
-$dustypurple: #9C6A8D;
+$darkBlue: #293E6A;
+$dustyPurple: #9C6A8D;
 $hotPurple: #8B1C55;
-$darkpurple: #3F2860;
+$darkPurple: #3F2860;
 $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
+$goldenrod: #e19f19;
+$grey: #787878;
 
 
 html input[type="button"],
@@ -25,7 +27,7 @@ input[type="submit"] {
 	border-radius: 25px;
 	border: 2px $teal solid;
 	background-color: white;
-	color: $darkteal;
+	color: $darkTeal;
 	padding: 8px 15px;
 
 }
@@ -33,8 +35,8 @@ html input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-radius: 25px;
-	border: 2px $darkteal solid;
-	background-color: $darkteal;
+	border: 2px $darkTeal solid;
+	background-color: $darkTeal;
 	color: white;
 	padding: 8px 15px;
 }
@@ -46,13 +48,14 @@ input[type="submit"]:hover {
 .beta-submit {
 	border: solid 1px #787878;
 	border-radius: 5px;
-	background-color: #e19f19;
+	background-color: $goldenrod;
 	height: 40px;
 	width: 16.5%;
 	font-family: 'Fjalla One', sans-serif;
 	font-size: medium;
 	color: white;
 	margin-top: 7px;
+	margin-bottom: 4px;
 	padding-top: 3px;
 	padding-left: 9px;
 }

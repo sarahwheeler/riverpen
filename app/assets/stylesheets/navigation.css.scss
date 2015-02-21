@@ -8,15 +8,17 @@
 //  ** COLOR CODES **  //
 
 $teal: #52B4AF; 
-$darkteal: #063E53;
+$darkTeal: #063E53;
 $blue: #0F9FB4;
-$darkblue: #293E6A;
-$dustypurple: #9C6A8D;
-$hotpurple: #8B1C55;
-$darkpurple: #3F2860;
+$darkBlue: #293E6A;
+$dustyPurple: #9C6A8D;
+$hotPurple: #8B1C55;
+$darkPurple: #3F2860;
 $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
+$goldenrod: #e19f19;
+$grey: #787878;
 
 
 #navbar {
@@ -71,7 +73,6 @@ $lime: #BCC747;
 	text-align: center;
 	font-size:1em;
 }
-
 
 .dropdown-link>div>.glyphicon {
 	color: $wine;

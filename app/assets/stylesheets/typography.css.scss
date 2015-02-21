@@ -4,19 +4,22 @@
 @import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
 @import url(http://fonts.googleapis.com/css?family=Archivo+Black);
 @import url(http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps);
+@import url(http://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
 //  ** COLOR CODES **  //
 
 $teal: #52B4AF; 
-$darkteal: #063E53;
+$darkTeal: #063E53;
 $blue: #0F9FB4;
-$darkblue: #293E6A;
-$dustypurple: #9C6A8D;
-$hotpurple: #8B1C55;
-$darkpurple: #3F2860;
+$darkBlue: #293E6A;
+$dustyPurple: #9C6A8D;
+$hotPurple: #8B1C55;
+$darkPurple: #3F2860;
 $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
+$goldenrod: #e19f19;
+$grey: #787878;
 
 
 //  ** GENERAL HEADLINES ** //
@@ -41,8 +44,9 @@ h2, h3, h4 {
 	text-decoration: none;
 	&:hover { 
 		text-decoration: none; 
-		color: $darkblue;
+		color: $goldenrod;
 		background-color: inherit;
+		text-shadow: 1px 4px 10px #000;
 	}
 }
 
@@ -80,28 +84,35 @@ h1.welcome {
 	font-family: 'Crimson Text', serif;
 	font-size: 2em;	
 	color: #005959;
-	margin-top:20px;
+	margin-top: 10px;
+	text-align: center;
 }
 h2.welcome-tag {
-	font-family: 'Crimson Text', serif;
-	color: #401E00;
-	padding-left: 8%;
+	font-family: 'News Cycle', serif;
+	line-height: 25px;
+	text-align: justify;
+	width: 90%;
+	color: #327a7a;
+	padding-left: 9%;
 
 }
 .banner-name {
 	font-family: 'Bilbo Swash Caps', script;
-	font-size: 3.35em;
-	color: #004040;
+	text-shadow: 1px 4px 10px #787878;
+	font-size: 10em;
+	color: $hotPurple;
 	float: right;
-	margin: 8% 40% 10% 15%;
+	margin: 8% 18% 10% 25%;
 }
 p.jumbo-description, p.beta-label {
 	font-family: 'Fjalla One', sans-serif;
 	color: #005959;
 }
 p.beta-label {
-	font-size: 1.35em;
-	padding-top: 0.9%;
+	font-size: 1.45em;
+	color: $hotPurple;
+	width: 27%;
+	padding-top: 2.48%;
 }
 
 // ** STREAM DISPLAYS ** //
@@ -118,7 +129,7 @@ p.beta-label {
 	&:hover {
 		background-color: white;
 		text-decoration: none;
-		color: $darkpurple;
+		color: $darkPurple;
 	}
 }
 

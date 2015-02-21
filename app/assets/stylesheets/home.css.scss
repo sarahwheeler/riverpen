@@ -5,15 +5,17 @@
 //  ** COLOR CODES **  //
 
 $teal: #52B4AF; 
-$darkteal: #063E53;
+$darkTeal: #063E53;
 $blue: #0F9FB4;
-$darkblue: #293E6A;
-$dustypurple: #9C6A8D;
-$hotpurple: #8B1C55;
-$darkpurple: #3F2860;
+$darkBlue: #293E6A;
+$dustyPurple: #9C6A8D;
+$hotPurple: #8B1C55;
+$darkPurple: #3F2860;
 $red: #AB3334;
 $wine: #57102C;
 $lime: #BCC747;
+$goldenrod: #e19f19;
+$grey: #787878;
 
 // INDEX //
 
@@ -25,21 +27,22 @@ $lime: #BCC747;
 	border-radius: 8px;
 	margin: 6% -10% 0 0;
 	width: 58%;
-	height: 350px;
+	height: 450px;
 	opacity: 0.65;
 }
 .main-banner {
 	position: absolute;
-	top: 19%;
-	right: -5%;
+	top: 160px;
+	right: 1.9%;
 	width: 44%;
-	height: 800px;
+	height: 300px;
 }
 .beta-signup {
 	display: inline-flex;
-	border: solid 1px #787878;
+	border: solid 1px $grey;
 	border-radius: 4px;
-	margin-left: -14%;
+	width: 90%;
+	margin-left: 5%;
 	padding: 10px 25px 12px 25px;
 }
 .field {
