@@ -1,3 +1,44 @@
 // Place all the styles related to the Streamline controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//  ** TYPOGRAPHY  **  //
+
+@import url(http://fonts.googleapis.com/css?family=Fjalla+One);
+@import url(http://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Archivo+Black);
+
+
+//  ** COLOR CODES **  //
+
+$teal: #52B4AF; 
+$darkTeal: #063E53;
+$blue: #0F9FB4;
+$darkBlue: #293E6A;
+$dustyPurple: #9C6A8D;
+$hotPurple: #8B1C55;
+$darkPurple: #3F2860;
+$red: #AB3334;
+$wine: #57102C;
+$lime: #BCC747;
+$goldenrod: #e19f19;
+$grey: #787878;
+
+// ** STRUCTURE ** //
+
+.sl-tabs {
+	display: inline-flex;
+	width: 80%;
+}
+.left-tab {
+	margin:0 30% 0 10%;
+	width: 30%;
+}
+.middle-tab {
+	margin:0 30% 0 10%;
+	width: 30%;
+}
+.right-tab {
+	margin:0 30% 0 10%;
+	width: 30%;
+}
