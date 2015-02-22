@@ -1,0 +1,2 @@
+module StreamlineHelper
+end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get "streamline/index"
+  get "streamline/following"
+  get "streamline/followers"
+
   root :to => "home#index"
   devise_for :users
 
