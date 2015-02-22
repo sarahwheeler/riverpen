@@ -24,15 +24,16 @@ $grey: #787878;
 	top: 6%;
 	right: 0;
 	background-color: white;
-	border-radius: 8px;
+	border: solid 3px $darkTeal;
+	border-radius: 18px;
 	margin: 6% -10% 0 0;
-	width: 58%;
-	height: 450px;
+	width: 59%;
+	height: 500px;
 	opacity: 0.65;
 }
 .main-banner {
 	position: absolute;
-	top: 160px;
+	top: 185px;
 	right: 1.9%;
 	width: 44%;
 	height: 300px;
