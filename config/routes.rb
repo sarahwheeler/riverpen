@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get "streamline/index"
+  get "streamline/index", as: :streamline
   get "streamline/following"
   get "streamline/followers"
 
