@@ -1,5 +1,4 @@
 * Fix weird ghost comment issue
-* Actual home page
 * Add HTML text formatting options to post field
 * Add background photo for each stream for user
 * Typography improvements
@@ -13,7 +12,7 @@
 * Avatars for users
 * ADA compliance
 * More test coverage
-* Change stream & post routes to username/stream/post/id
+* Changes stream & post routes to username/stream/post/id
 * Tagging system
 * Search public articles, usernames, tags
 * Random stream button (or secret keypress)
@@ -25,3 +24,4 @@ Done:
 * Make streamless Post a modal
 * Edit post page should contain existing post info
 * Add comment/reply system
+* Actual home page
