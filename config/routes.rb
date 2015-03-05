@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   get '/float_post' => 'posts#float_post', as: :float_post
   post '/float_post' => 'posts#streamless_create'
+
+  post 'streams/follow' => 'streams#follow', as: :follow
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -47,6 +47,16 @@ class StreamsController < ApplicationController
     respond_with(@stream)
   end
 
+  def follow 
+    follow = Follow.new(user_id: current_user.id, stream_id: @stream.id, 
+                        stream_user_id: @stream.user_id)
+    if follow.save
+      respond_with(@stream)
+    else
+      respond_with(@stream)
+    end
+  end
+
   private
     def set_stream
       @stream = Stream.find(params[:id])
