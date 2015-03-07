@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
 
   has_many :streams
+  has_many :follows
   has_many :posts, through: :streams  
 
   #  COLUMNS 
@@ -39,4 +40,7 @@ class User < ActiveRecord::Base
     Profile.create(user_id: self.id)
   end
 
+  def is_following?(stream)
+    self.follows.where(stream_id: stream).empty? 
+  end
 end

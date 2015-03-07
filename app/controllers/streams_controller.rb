@@ -1,7 +1,8 @@
+
 class StreamsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_stream, only: [:show, :edit, :update, :destroy]
+  before_action :set_stream, only: [:follow, :show, :edit, :update, :destroy]
 
   respond_to :html
 
@@ -48,8 +49,8 @@ class StreamsController < ApplicationController
   end
 
   def follow 
-    follow = Follow.new(user_id: current_user.id, stream_id: @stream.id, 
-                        stream_user_id: @stream.user_id)
+    @user = current_user
+    follow = Follow.new(follow_params)
     if follow.save
       respond_with(@stream)
     else
