@@ -1,14 +1,26 @@
 <br>
 <div class="sl-tabs"> 
-	<div class="left-tab">
-		<h1 class="tab-text">Me</h1>
-	</div>
-	<div class="middle-tab">
-		<h1 class="tab-text">Following</h1>
-	</div>
-	<div class="right-tab">
-		<h1 class="tab-text">Followers</h1>
-	</div>
-</div>
+	<div role="tabpanel">
 
+	  <!-- Nav tabs -->
+	  <ul class="nav nav-tabs" role="tablist">
+	    <li role="presentation"><a href="#me" aria-controls="me" role="tab" data-toggle="tab">Me</a></li>
+	    <li role="presentation"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following</a></li>
+	    <li role="presentation"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Followers</a></li>
+	  </ul>
+
+	  <!-- Tab panes -->
+	  <div class="tab-content">
+	    <div role="tabpanel" class="tab-pane active" id="me">
+	    	<%= render :partial => 'streamline/mine' %>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="following">
+	    	<%# render :partial => '' %>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="followers">
+	    	<%# render :partial => '' %>
+	    </div>
+	  </div>
+
+	</div>
 </div>
