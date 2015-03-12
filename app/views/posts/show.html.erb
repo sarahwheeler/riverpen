@@ -1,10 +1,13 @@
  <p id="notice"><%= notice %></p>
 
-<h3><%= @post.title unless @post.title.nil? %></h3>
-
+<div id="post-page">
+<h2><%= @post.title unless @post.title.nil? %></h2>
+<br>
 <p><%= @post.content %></p>
-
+<br>
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', :back %><br>
 <%= link_to 'Reply', new_post_comment_path(@post) %> | 
 <%= link_to 'View comments', post_comments_path(@post) %>
+
+</div>
