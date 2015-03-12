@@ -1,4 +1,18 @@
 <br>
-<p>Links to user's streams go here</p>
+<div class="stream-list">
+	<ul class="my-streams">
+		<% if @user.streams.any? %>
+			<%= @user.streams.each do |stream| %>
+				<li class="my-stream-link"><%= link_to stream.category, stream_path(stream) %></li>
+			<% end %>
+		<% else %>
+			<p>You don't have any streams yet.</p>
+			<p><%= link_to "Why don't you create one?", new_stream_path %></p>
+		<% end%>
+	</ul>
+</div>
 
-<p>Current stream goes here</p>
+<div id="stream-class">
+
+</div>
+
