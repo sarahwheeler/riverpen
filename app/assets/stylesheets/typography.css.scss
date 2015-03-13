@@ -20,6 +20,7 @@ $wine: #57102C;
 $lime: #BCC747;
 $goldenrod: #e19f19;
 $grey: #787878;
+$lightYellow: #fafbb6;
 
 
 //  ** GENERAL HEADLINES ** //
@@ -44,7 +45,7 @@ h2, h3, h4 {
 	text-decoration: none;
 	&:hover { 
 		text-decoration: none; 
-		color: $goldenrod;
+		color: $lightYellow;
 		background-color: inherit;
 		text-shadow: 1px 4px 10px #000;
 	}
