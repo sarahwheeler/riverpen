@@ -29,16 +29,27 @@ $grey: #787878;
 .sl-tabs {
 	display: inline-flex;
 	width: 80%;
+	margin-bottom: 50px;
 }
-.left-tab {
-	margin:0 30% 0 10%;
-	width: 30%;
+.left-tab, .middle-tab, .right-tab {
+	margin:0 2% 0 4%;
+	padding-top: 10px;
+	width: 10%;
+	height: 45px;
+	border: solid 1px #d8d8d8;
+	border-bottom: 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-align: center;
 }
-.middle-tab {
-	margin:0 30% 0 10%;
-	width: 30%;
+.row#nav-tabs {
+	display: inline-flex;
+	width:700%;
+	list-style: none;
+	
 }
-.right-tab {
-	margin:0 30% 0 10%;
-	width: 30%;
+#me, #following, #followers {
+	font-family: "Archivo Black", sans-serif;
+	font-size: 1.5em;
 }
+
