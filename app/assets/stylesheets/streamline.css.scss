@@ -28,13 +28,12 @@ $grey: #787878;
 
 .sl-tabs {
 	display: inline-flex;
-	width: 80%;
+	width: 204%;
 	margin-bottom: 50px;
 }
 .left-tab, .middle-tab, .right-tab {
 	margin:0 2% 0 4%;
 	padding-top: 10px;
-	width: 10%;
 	height: 45px;
 	border: solid 1px #d8d8d8;
 	border-bottom: 0px;
@@ -42,14 +41,20 @@ $grey: #787878;
 	border-top-right-radius: 5px;
 	text-align: center;
 }
-.row#nav-tabs {
+.row #nav-tabs {
 	display: inline-flex;
-	width:700%;
+	width:326%;
 	list-style: none;
-	
+	li {
+		list-style: none;
+	}	
 }
 #me, #following, #followers {
 	font-family: "Archivo Black", sans-serif;
 	font-size: 1.5em;
 }
-
+#me:hover, #following:hover, #followers:hover {
+	background-color: #fff;
+	color: $hotPurple;
+	text-decoration: none;
+}
