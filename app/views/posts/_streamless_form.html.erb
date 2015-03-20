@@ -1,4 +1,4 @@
-
+<%= tinymce_assets %>
 
 <h4> Select a stream: </h4>
 <% unless user_stream_options == nil %>
@@ -12,9 +12,10 @@
   </div>
 
   <div class="field">
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 60 %>
   </div>
 
+  <%= tinymce %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
 
   <div class="actions">

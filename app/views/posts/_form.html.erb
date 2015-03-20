@@ -1,3 +1,5 @@
+<%= tinymce_assets %>
+
 <%= form_for(@post, :html => {:multipart => true}) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -17,12 +19,15 @@
   </div>
 
   <div class="field">
-    <%= f.text_area :content %>
+   <%= f.text_area :content, :class => "tinymce", :rows => 10, :cols => 120 %>
   </div>
+    <%= tinymce %>
     <%= f.hidden_field :stream_id, :value => @stream.id %>
     <%= f.hidden_field :user_id, :value => @user.id %>
 
   <div class="actions">
+    <!-- Hack code to be replaced with pretty CSS in a bit. -->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <%= f.submit %>
   </div>
 <% end %>

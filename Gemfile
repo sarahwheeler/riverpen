@@ -9,7 +9,7 @@ source 'https://rubygems.org'
 	gem 'sass-rails', '~> 4.0.3'	# Use SCSS for stylesheets
 	gem 'uglifier', '>= 1.3.0'		# Use Uglifier as compressor for JavaScript assets
 	gem 'twitter-bootstrap-rails'
-
+	gem 'tinymce-rails' # Javascript HTML WYSIWYG editor 
 
 # // JAVASCRIPT //
 	gem 'jquery-rails'				# Use jquery as the JavaScript library
