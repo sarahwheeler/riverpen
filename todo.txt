@@ -1,10 +1,10 @@
 * Fix weird ghost comment issue
-* Add HTML text formatting options to post field
+* Add HTML text formatting options to post field ** in progress
 * Add background photo for each stream for user
 * Typography improvements
 * Set up private/public view logic 
 * Follow system for individual streams
-* Set up Streamline that contains most recent posts from all the streams you follow
+* Set up Streamline that contains most recent posts from all the streams you follow ** in progress
 * Draft/published system
 * Messaging/inbox system
 * CSS throughout (desparately)
@@ -12,6 +12,7 @@
 * Avatars for users
 * ADA compliance
 * More test coverage
+* Skin for TinyMCE, remove some options
 * Changes stream & post routes to username/stream/post/id
 * Tagging system
 * Search public articles, usernames, tags
