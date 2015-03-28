@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   respond_to :html
 
   def index
-    @posts = Post.all
+    @posts = Post.where(published: true)
     respond_with(@posts)
   end
 
@@ -81,6 +81,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:id, :user_id, :stream_id, :title, :content)
+      params.require(:post).permit(:id, :user_id, :stream_id, :title, :content, :published)
     end
 end

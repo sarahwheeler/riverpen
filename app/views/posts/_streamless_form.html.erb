@@ -14,6 +14,11 @@
   <div class="field">
     <%= f.text_area :content, :class => "tinymce", :rows => 40, :cols => 60 %>
   </div>
+<br><br><br><br><br><br><br><br><br>
+  <div class="field">
+    <%= f.label "Save and Publish Now" %>
+    <%= f.check_box :published %>
+  </div>
 
   <%= tinymce %>
   <%= f.hidden_field :user_id, :value => current_user.id %>

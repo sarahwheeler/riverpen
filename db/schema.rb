@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304030915) do
+ActiveRecord::Schema.define(version: 20150328023403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20150304030915) do
     t.text     "content"
     t.integer  "user_id"
     t.integer  "stream_id"
+    t.boolean  "published",  default: false
   end
 
   create_table "profiles", force: true do |t|

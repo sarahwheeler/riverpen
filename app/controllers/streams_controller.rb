@@ -14,7 +14,7 @@ class StreamsController < ApplicationController
   def show
     @stream = Stream.find(params[:id])
     @user = User.find(@stream.user_id)
-    @posts = Post.find_by_stream_id(@stream.id)
+    @posts = Post.where(published: true).find_by_stream_id(@stream.id)
     respond_with(@stream)
   end
 
