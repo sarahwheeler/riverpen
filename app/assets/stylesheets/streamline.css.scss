@@ -52,6 +52,7 @@ $grey: #787878;
 #me, #following, #followers {
 	font-family: "Archivo Black", sans-serif;
 	font-size: 1.5em;
+	display: none;
 }
 #me:hover, #following:hover, #followers:hover {
 	background-color: #fff;

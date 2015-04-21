@@ -2,8 +2,8 @@
 <br>
 <div class="stream-list">
 	<ul class="my-streams">
-		<% if @user.streams.any? %>
-			<%= @user.streams.each do |stream| %>
+		<% if current_user && current_user.streams.any? %>
+			<%= current_user.streams.each do |stream| %>
 				<li class="my-stream-link"><%= link_to stream.category, stream_path(stream) %></li>
 			<% end %>
 		<% else %>
