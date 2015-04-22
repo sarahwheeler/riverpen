@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require tinymce-jquery
 //= require turbolinks
 //= require twitter/bootstrap
 //= require streams
+//= require streamline
 //= require_tree .
 

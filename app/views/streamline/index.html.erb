@@ -1,29 +1,24 @@
-<br>
-<div class="sl-tabs"> 
-	<div role="tabpanel">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css">
+</head>
+<body>
+	<br>
 
-	  <!-- Nav tabs -->
-	  <div class="row">
-		  <ul class="nav nav-tabs" id="nav-tabs" role="tablist">
-		    <li role="presentation" class="left-tab col-md-4"><a href="#me" aria-controls="me" role="tab" data-toggle="tab">Me</a></li>
-		    <li role="presentation" class="middle-tab col-md-4"><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following</a></li>
-		    <li role="presentation" class="right-tab col-md-4"><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Followers</a></li>
-		  </ul>
-		</div>
-	</div>
-	
-	</div>
-	 <!-- Tab panes -->
-	  <div class="tab-content">
-	    <div role="tabpanel" class="tab-pane active" id="me">
-	    	<%= render :partial => 'streamline/mine' %>
-	    </div>
-	    <div role="tabpanel" class="tab-pane" id="following">
-	    	<%= render :partial => 'streamline/following' %>
-	    </div>
-	    <div role="tabpanel" class="tab-pane" id="followers">
-	    	<%= render :partial => 'streamline/followers' %>
-	    </div>
+	<div id="tabs">
+	  <ul>
+	    <li><a href="#tabs-1">Me</a></li>
+	    <li><a href="#tabs-2">Following</a></li>
+	    <li><a href="#tabs-3">Followers</a></li>
+	  </ul>
+	  <div id="tabs-1">
+	   <%= render :partial => 'streamline/mine' %>
 	  </div>
-</div>
-
+	  <div id="tabs-2">
+	    <%= render :partial => 'streamline/following' %>
+	  </div>
+	  <div id="tabs-3">
+	    <%= render :partial => 'streamline/followers' %>
+	  </div>
+	</div>
+</body>
