@@ -46,6 +46,12 @@ end
 	gem 'sdoc', '~> 0.4.0', group: :doc		# bundle exec rake doc:rails generates the API under doc/api.
 	gem 'awesome_print'
 
+
+group :test do
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
