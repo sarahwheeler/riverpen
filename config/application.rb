@@ -22,6 +22,7 @@ module Riverpen
     # config.i18n.default_locale = :de
 
     config.generators do |g|
+        g.test_framework :minitest, spec: false
         g.factory_girl dir: 'custom/dir/for/factories'
     end
   end
