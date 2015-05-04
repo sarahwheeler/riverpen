@@ -12,13 +12,17 @@ Rails.application.routes.draw do
     resources :follows
   end
 
+  get '/float_post' => 'posts#float_post', as: :float_post
+  post '/float_post' => 'posts#blogless_create'
+
   resources :posts do
     resources :comments
   end
 
   resources :home
-  resources :streams
+  resources :blogs
 
+  
   devise_scope :user do
    get "signup", to: "devise/registrations#new"
    get "login", to: "devise/sessions#new"
@@ -31,8 +35,7 @@ Rails.application.routes.draw do
   patch 'users/:id/edit_profile' => 'profiles#update'
 
 
-  get '/float_post' => 'posts#float_post', as: :float_post
-  post '/float_post' => 'posts#streamless_create'
+
 
 
   

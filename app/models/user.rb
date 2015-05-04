@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   # OWNERSHIP
   has_one :profile, dependent: :destroy
 
-  has_many :streams
+  has_many :blogs
   has_many :follows
-  has_many :posts, through: :streams  
+  has_many :posts, through: :blogs  
 
   #  COLUMNS 
   validates :email, presence: true, uniqueness: true
@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     Profile.create(user_id: self.id)
   end
 
-  def is_following?(stream)
-    self.follows.where(stream_id: stream).empty? 
+  def is_following?(blog)
+    self.follows.where(blog_id: blog).empty? 
   end
 end

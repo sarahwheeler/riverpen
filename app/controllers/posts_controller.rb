@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_current_stream, only: [:new]
+  before_action :set_current_blog, only: [:new]
   before_action :set_user, only: [:new, :create, :destroy, :post]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+
 
   respond_to :html
 
@@ -44,17 +44,18 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @stream = Stream.find(@post.stream_id)
+    @blog = Blog.find(@post.blog_id)
     @post.destroy
-    redirect_to stream_path(@stream.id) 
+    redirect_to blog_path(@blog.id) 
   end
 
   def float_post
-    @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
+    @blog_options = Blog.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
     @post = Post.new
+    respond_with(@post, @blog_options)
   end
 
-  def streamless_create
+  def blogless_create
     @post = Post.new(post_params)
     respond_to do |format|
       if @post.save
@@ -72,8 +73,8 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
-    def set_current_stream
-      @stream = Stream.find(params[:stream_id])
+    def set_current_blog
+      @blog = Blog.find(params[:blog_id])
     end
 
     def set_user
@@ -81,6 +82,6 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:id, :user_id, :stream_id, :title, :content, :published)
+      params.require(:post).permit(:id, :user_id, :blog_id, :title, :content, :published)
     end
 end

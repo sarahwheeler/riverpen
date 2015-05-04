@@ -1,19 +1,19 @@
 <h4>Mine</h4>
 <br>
-<div class="stream-list">
-	<ul class="my-streams">
-		<% if current_user && current_user.streams.any? %>
-			<%= current_user.streams.each do |stream| %>
-				<li class="my-stream-link"><%= link_to stream.category, stream_path(stream) %></li>
+<div class="blog-list">
+	<ul class="my-blogs">
+		<% if current_user && current_user.blogs.any? %>
+			<%= current_user.blogs.each do |blog| %>
+				<li class="my-blog-link"><%= link_to blog.category, blog_path(blog) %></li>
 			<% end %>
 		<% else %>
-			<p>You don't have any streams yet.</p>
-			<p><%= link_to "Why don't you create one?", new_stream_path %></p>
+			<p>You don't have any blogs yet.</p>
+			<p><%= link_to "Why don't you create one?", new_blog_path %></p>
 		<% end%>
 	</ul>
 </div>
 
-<div id="stream-class">
+<div id="blog-class">
 
 </div>
 <hr>

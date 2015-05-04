@@ -1,28 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <div class="col-md-4">
-	<div id="stream-panel">
-		<div id="stream-user-title"><%= link_to "#{@user.username}", profile_path(@user), id: "stream-profile-link" %><sup>:<%= "#{@stream.category}" %></sup></div>
-		<p><%= @stream.posts.count %> posts</p>
+	<div id="blog-panel">
+		<div id="blog-user-title"><%= link_to "#{@user.username}", profile_path(@user), id: "blog-profile-link" %><sup>:<%= "#{@blog.category}" %></sup></div>
+		<p><%= @blog.posts.count %> posts</p>
 
-		<%= follow_button_helper(@stream.id) %>
+		<%= follow_button_helper(@blog.id) %>
 
-		<%= link_to "New Post", new_post_path(:stream_id => @stream.id) %><br>
-		<%= link_to 'Edit Stream', edit_stream_path(@stream) %>
+		<%= link_to "New Post", new_post_path(:blog_id => @blog.id) %><br>
+		<%= link_to 'Edit Blog', edit_blog_path(@blog) %>
 	</div>
 </div>
 <div class="col-md-2"></div>
 <div class="col-md-6">
-	<% @stream.posts.each do |post| %>
+	<% @blog.posts.each do |post| %>
 	  <div class="post-wrapper">
 	    <h2 class="post-headline"><%= post.title %></h2>
 	     <p><%= simple_format h post.content %></p><br>
 	     <p><%= "Penned " + time_ago_in_words(post.created_at) + " ago" %></p>
 	  <div class="post-footer">
 	  	<ul>
-	  		<li><%= link_to 'Show', post_path(@stream, post) %></li>
+	  		<li><%= link_to 'Show', post_path(@blog, post) %></li>
 	  		<li>
-	  			<%= link_to edit_post_path(@stream, post) do %>
+	  			<%= link_to edit_post_path(@blog, post) do %>
 			    	<span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
 					<% end %>
 	  		</li>

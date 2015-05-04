@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     @user.save
      if @user.save
       sign_in @user
-      redirect_to streams_path
+      redirect_to blogs_path
     else
       render "new"
     end    

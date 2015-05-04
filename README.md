@@ -4,4 +4,4 @@
 
 ## Riverpen
 
-Riverpen is a blogging app that allows users to compartmentalize what they read and write. Read about what you want, when you want. Each Riverpenner can write within a topical "stream" (like __Hobbies__ or __Family__), and can choose which streams they follow from other users.
+Riverpen is a blogging app that allows users to compartmentalize what they read and write. Read about what you want, when you want. Each Riverpenner can write within a topical blog (like __Hobbies__ or __Family__), and can choose which streams they follow from other users.

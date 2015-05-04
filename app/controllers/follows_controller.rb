@@ -47,12 +47,12 @@ class FollowsController < ApplicationController
       @user = current_user
     end
 
-    def set_stream
-      @stream = Stream.find_by_id(params[:stream_id])
+    def set_blog
+      @blog = Blog.find_by_id(params[:blog_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def follow_params
-      params.require(:follow).permit(:user_id, :stream_id, :stream_user_id)
+      params.require(:follow).permit(:user_id, :blog_id, :blog_user_id)
     end
 end

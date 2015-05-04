@@ -5,7 +5,7 @@
 		<ul id="nav-menu">
 			<li class="nav-link"><%= link_to "Streamline", streamline_path %></li>
 			<li class="nav-link"><%= link_to "+Post", float_post_path, :remote => "true", :data => { :toggle => "modal", :target =>"#postModal" } %></li>
-			<li class="nav-link"><%= link_to "+Stream", new_stream_path %></li>
+			<li class="nav-link"><%= link_to "+Blog", new_blog_path %></li>
 
 			<% if user_signed_in? %>
 
@@ -79,7 +79,7 @@
 	        <h4 class="modal-title">Post</h4>
 	      </div>
 	      <div class="modal-body">
-	        <%= render "posts/streamless_form" %>
+	        <%= render "posts/blogless_form" %>
 	    	</div>
 	    </div>
 	  </div>

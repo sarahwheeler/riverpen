@@ -1,4 +1,4 @@
-class Stream < ActiveRecord::Base
+class Blog < ActiveRecord::Base
 
 	before_save :capitalize_category
 

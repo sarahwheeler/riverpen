@@ -12,9 +12,9 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def user_stream_options
+  def user_blog_options
     unless current_user.nil?
-  	 Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
+  	 Blog.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
     end
   end
 

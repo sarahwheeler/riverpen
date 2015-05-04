@@ -6,8 +6,8 @@ module StreamlineHelper
 		if @user.follows.any?
 			@user.follows.each do |f|
 				post_collection = []
-				stream = Stream.find(f.stream_id)
-				stream.posts.order('created_at').each do |p| 					
+				blog = Blog.find(f.blog_id)
+				blog.posts.order('created_at').each do |p| 					
 					post_collection << p
 				end
 				@all_posts << post_collection

@@ -1,10 +1,10 @@
 * Fix weird ghost comment issue
 * Add HTML text formatting options to post field ** in progress
-* Add background photo for each stream for user
+* Add background photo for each blog for user
 * Typography improvements
 * Set up private/public view logic 
-* Follow system for individual streams
-* Set up Streamline that contains most recent posts from all the streams you follow ** in progress
+* Follow system for individual blogs
+* Set up Streamline that contains most recent posts from all the blogs you follow ** in progress
 * Draft/published system
 * Messaging/inbox system
 * CSS throughout (desparately)
@@ -13,16 +13,16 @@
 * ADA compliance
 * More test coverage
 * Skin for TinyMCE, remove some options
-* Changes stream & post routes to username/stream/post/id
+* Changes blog & post routes to username/blog/post/id
 * Tagging system
 * Search public articles, usernames, tags
-* Random stream button (or secret keypress)
+* Random blog button (or secret keypress)
 * Set up subcategories
 
 
 Done:
-* Fix Public/Private stream radio buttons [UPDATE: made 'em checkboxes]
-* Make streamless Post a modal
+* Fix Public/Private blog radio buttons [UPDATE: made 'em checkboxes]
+* Make blogless Post a modal
 * Edit post page should contain existing post info
 * Add comment/reply system
 * Actual home page

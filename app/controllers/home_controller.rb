@@ -4,17 +4,11 @@ class HomeController < ApplicationController
   def index
     @home = Home.all
     @post = Post.new
-    if current_user.nil?
-
-    else 
-      @stream_options = Stream.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
-      respond_with(@home)
+    unless current_user.nil?
+      @blog_options = Blog.where(:user_id => current_user.id).map{ |s| [ s.category.capitalize, s.id ] }
     end
     
   end
-
-  def create
-  end	
 
   private
 

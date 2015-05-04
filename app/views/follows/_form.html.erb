@@ -1,8 +1,8 @@
 <%= form_for([@user, @user.follows.new]) do |f| %>
   <div class="field">
     <%= f.hidden_field :user_id, :value => @user.id %>
-    <%= f.hidden_field :stream_id, :value => @stream.id %>
-    <%= f.hidden_field :stream_user_id, :value => @stream.user_id %>
-    <%= f.submit "Follow", class: "follow-stream" %>
+    <%= f.hidden_field :blog_id, :value => @blog.id %>
+    <%= f.hidden_field :blog_owner_id, :value => @blog.user_id %>
+    <%= f.submit "Follow", class: "follow-blog" %>
   </div>
 <% end %>

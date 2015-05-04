@@ -1,10 +1,10 @@
 <%= tinymce_assets %>
 
-<h4> Select a stream: </h4>
-<% unless user_stream_options == nil %>
-  <%= form_for Post.new, as: @post, url: {controller: "posts", action: "streamless_create"}, html: {class: "streamless-post-form"} do |f| %>
+<h4> Select a blog: </h4>
+<% unless user_blog_options == nil %>
+  <%= form_for Post.new, as: @post, url: {controller: "posts", action: "create"}, html: {class: "blogless-post-form"} do |f| %>
 
-  <%= f.select(:stream_id, user_stream_options) %>
+  <%= f.select(:blog_id, user_blog_options) %>
   <hr> 
   <div class="field">
     <%= f.label :title %><br />
@@ -31,6 +31,6 @@
 
 <% else %>
 
-  <%= link_to "Create a Stream First!", new_stream_path %> 
+  <%= link_to "Create a Blog First!", new_blog_path %> 
 
 <% end %>

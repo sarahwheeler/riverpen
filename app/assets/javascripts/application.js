@@ -16,7 +16,7 @@
 //= require tinymce-jquery
 //= require turbolinks
 //= require twitter/bootstrap
-//= require streams
+//= require blogs
 //= require streamline
 //= require_tree .
 

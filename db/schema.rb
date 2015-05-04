@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328023403) do
+ActiveRecord::Schema.define(version: 20150503195856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "category"
+    t.integer  "user_id"
+    t.boolean  "public"
+  end
+
+  add_index "blogs", ["user_id"], name: "index_blogs_on_user_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -26,8 +36,8 @@ ActiveRecord::Schema.define(version: 20150328023403) do
 
   create_table "follows", force: true do |t|
     t.integer  "user_id"
-    t.integer  "stream_id"
-    t.integer  "stream_user_id"
+    t.integer  "blog_id"
+    t.integer  "blog_owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150328023403) do
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
-    t.integer  "stream_id"
+    t.integer  "blog_id"
     t.boolean  "published",  default: false
   end
 
@@ -60,16 +70,6 @@ ActiveRecord::Schema.define(version: 20150328023403) do
   end
 
   add_index "profiles", ["user_id", "created_at"], name: "index_profiles_on_user_id_and_created_at", using: :btree
-
-  create_table "streams", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "category"
-    t.integer  "user_id"
-    t.boolean  "public"
-  end
-
-  add_index "streams", ["user_id"], name: "index_streams_on_user_id", using: :btree
 
   create_table "subcategories", force: true do |t|
     t.string   "name"
