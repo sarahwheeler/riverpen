@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
 	validates :user_id, :presence => true
 	validates :blog_id, :presence => true
 
+	acts_as_taggable_on :tags
+
 
   def owned_by?(user)
   	@owner = User.find(self.user_id)

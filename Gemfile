@@ -4,12 +4,15 @@ source 'https://rubygems.org'
 	gem 'rails', '4.1.8'			# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 	gem 'pg'						# Use postgresql as the database for Active Record
 
-
 # // STYLESHEETS //
 	gem 'sass-rails', '~> 4.0.3'	# Use SCSS for stylesheets
 	gem 'uglifier', '>= 1.3.0'		# Use Uglifier as compressor for JavaScript assets
 	gem 'twitter-bootstrap-rails'
 	gem 'tinymce-rails' # Javascript HTML WYSIWYG editor 
+
+# // FUNCTIONALITY //
+
+	gem 'acts-as-taggable-on', '~> 3.4'
 
 # // JAVASCRIPT //
 	gem 'jquery-rails'				# Use jquery as the JavaScript library
@@ -38,6 +41,7 @@ end
 	gem 'jquery-turbolinks'
 	gem 'sdoc', '~> 0.4.0', group: :doc		# bundle exec rake doc:rails generates the API under doc/api.
 	gem 'awesome_print'
+
 
 
 # Use ActiveModel has_secure_password
